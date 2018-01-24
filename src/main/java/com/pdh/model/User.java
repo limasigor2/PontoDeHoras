@@ -1,5 +1,6 @@
 package com.pdh.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -7,10 +8,12 @@ import javax.validation.constraints.Size;
 @Entity(name="usuario")
 public class User extends Pessoa{
 
+	@Column
 	@NotNull
 	@Size(min=6, max=20, message="O nome de usuário deve ser entre {min} e {max}.")
 	private String nomeUsuario;
 	
+	@Column
 	@NotNull
 	@Size(min=6, max=20, message="A senha deve ser entre {min} e {max}.")
 	private String password;

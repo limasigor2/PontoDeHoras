@@ -1,5 +1,6 @@
 package com.pdh.model;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,10 +15,12 @@ public abstract class Pessoa {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
+	@Column
 	@NotNull
 	@Size(min=5, max=100, message="O nome deve ser entre {min} e {max}.")
 	private String nome;
-		
+
+	@Column
 	@NotNull
 	private String cpf;
 	
