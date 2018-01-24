@@ -1,4 +1,4 @@
-#PontoDeHoras
+# PontoDeHoras
 
 Sistema desenvolvido para substituir o uso de excel em uma empresa para registrar as horas trabalhadas de seus funcionários.
 
