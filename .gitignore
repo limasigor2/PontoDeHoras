@@ -102,3 +102,5 @@ transaction-logs
 .flattened-pom.xml
 secrets.yml
 
+### application.properties ###
+application.properties
