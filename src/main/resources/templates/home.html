@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head th:replace="template :: header">
+	</head>
+	<body>
+		<head th:replace="template :: navbar-not-logged"/>
+		<div class="body">
+		    <h1>Hello! This is Home Page!</h1>
+		    <a th:href="@{/welcome}">Go to User Welcome Page!</a>
+		    <br/>
+		    <a th:href="@{/admin}">Go to Admin Page!</a>
+		</div>
+	</body>
+</html>

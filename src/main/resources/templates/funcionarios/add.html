@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head th:replace="template :: header">
+	
+	</head>
+	<body>
+		<head th:replace="template :: navbar"/>
+		<div class="body">
+			<div class="row">
+				<form class="col s12" th:object="${funcionario}" th:action="@{/funcionarios/save}" method="POST">					
+					<div class="form-group row">
+						<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+							<div th:each="detailedError : ${#fields.detailedErrors()}">
+								<span th:text="${detailedError.message}"></span>
+							</div>
+					     </div>
+					</div>
+					<input type="hidden" th:field="*{id}"/>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="nome" th:field="*{nome}" type="text" class="validate"/>
+							<label for="nome">Nome</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="cpf" th:field="*{cpf}" type="text" class="validate"/>
+							<label for="cpf">CPF</label>
+						</div>
+					</div>
+					<div class="row">
+                    	<button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                    	<a th:href="@{/}" class="btn">Cancelar</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div th:replace="template :: javascript"></div>
+	</body>
+</html>

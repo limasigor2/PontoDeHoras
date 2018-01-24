@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head th:replace="template :: header">
+	</head>
+	<body>
+		<head th:replace="template :: navbar"/>
+		<div class="container">
+			<div>
+				<h3 class="header center-on-small-only">Usuarios</h3>
+			</div>
+			<table class="table bordered striped responsive-table">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>UserName</th>
+						<th>Editar</th>
+						<th>Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="usuario : ${usuarios}">
+						<td th:text="${usuario.nome}"></td>
+						<td th:text="${usuario.nomeUsuario}"></td>
+						<td>
+							<div>
+								<a class="btn btn-sm waves-effect waves-light" th:href="@{/usuarios/edit/{id}(id=${usuario.id})}"><i class="material-icons right">edit</i>Editar</a>
+							</div>
+						</td>
+						<td>
+							<div>
+								<a class="delete btn btn-sm btn-danger red" th:href="@{/usuarios/delete/{id}(id=${usuario.id})}"><i class="material-icons right">delete</i>Excluir</a>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

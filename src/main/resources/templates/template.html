@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:fragment="header">
+		<title>Sistema de Ponto de Hora</title>
+		<meta http-equiv="Content-Type" name="viewport" content="text/html; width=device-width, initial-scale=1.0" charset="utf-8" />
+		<link th:href="@{/css/materialize.min.css}" rel="stylesheet"/>
+		<link th:href="@{/css/styles.css}" rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	</head>
+	
+	<div th:fragment="navbar-not-logged" class="navbar">
+		<nav class="blue">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">SisPH</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li>
+						<a th:href="@{/login}">Login</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div th:fragment="navbar" class="navbar">
+		<nav class="blue">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">SisPH</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li>
+					     <form th:action="@{/logout}" method="post">
+					     		<input type="submit" value="Sair"></input>
+					     </form>
+					</li>
+					<!-- li><a th:href="@{/logout}" method="post">Sair</a></li -->
+					<!-- form class="right hide-on-med-and-down waves-effect waves-light" th:action="@{/logout}" method="post">  
+			        	<input type="submit" value="Sair"/>
+			     	</form-->
+				</ul>
+
+			</div>
+		</nav>
+	</div>
+
+	<div th:fragment="javascript">
+		<script type="text/javascript" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/materialize.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/script.js}"></script>
+	</div>
+</html>

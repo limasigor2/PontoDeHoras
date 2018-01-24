@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  
+}
+
+.body {
+	width: 100%;
+	padding: 0 7%;
+	max-width: none;
+	height: 100vh;
+}
+#loginbtn{
+	float: right;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#panell{
+     margin-top: 100px;
+     padding: 0px;
+}
+#loginbtn{
+     float: right;
+     margin-bottom: 10px;
+     margin-right: 10px;
+}
+nav{
+	color: #5DBCD2 !important;	
+}
+#title{
+     background-color: #5DBCD2;
+     color: white;
+     padding: 8px;
+     margin-top: 0px
+}
+form{
+     padding:0px;
+     border-radius: 3px;
+     box-sizing: border-box;
+}
+#username,#password{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#checkbox{
+    margin-left: 30px;
+}
+  /* label color */
+   .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
