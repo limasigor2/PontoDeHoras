@@ -29,7 +29,7 @@ public class FuncionarioController {
 	@GetMapping(path="/funcionarios/add")
 	public ModelAndView add(Funcionario funcionario) {
 		ModelAndView mv = new ModelAndView("/funcionarios/add");
-		mv.addObject("funcionarios", funcionario);
+		mv.addObject("funcionario", funcionario);
 		return mv;
 	}
 	@GetMapping(path="/funcionarios/edit/{id}")

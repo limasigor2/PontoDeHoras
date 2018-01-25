@@ -13,13 +13,25 @@
 					<tr>
 						<th>Nome</th>
 						<th>Opções</th>
+						<th>Adicionar Entrada/Saída</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="funcionario : ${funcionarios}">
 						<td th:text="${funcionario.nome}"></td>
 						<td>
-							<a class="waves-effect waves-light btn modal-trigger" th:href="'#modal' + ${funcionario.id}" th:text="${funcionario.nome}"></a>
+							<a class="waves-effect waves-light btn" th:href="@{/funcionarios/edit/{id}(id=${funcionario.id})}">
+								Editar<i class="material-icons right">edit</i>
+							</a>
+							<a class="waves-effect waves-light btn red" th:href="@{/funcionarios/delete/{id}(id=${funcionario.id})}">
+								Excluir<i class="material-icons right">delete</i>
+							</a>
+							
+						</td>
+						<td>
+							<a class="waves-effect waves-light btn modal-trigger" th:href="'#modal' + ${funcionario.id}" >
+							      <i class="material-icons">edit</i>
+							</a>
 							
 							<div th:id="'modal' + ${funcionario.id}" class="modal modal-fixed-footer">
 								<div class="modal-content">

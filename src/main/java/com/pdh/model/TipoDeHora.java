@@ -1,6 +1,6 @@
 package com.pdh.model;
 
-public enum TiposDeHora {
+public enum TipoDeHora {
 	ENTRADA_MANHA("EntradaManha"),
 	SAIDA_MANHA("SaidaManha"),
 	ENTRADA_TARDE("EntradaTarde"),
@@ -9,7 +9,7 @@ public enum TiposDeHora {
 	SAIDA_NOITE("Saida_Noite");
 	private final String tipo;
 	
-	TiposDeHora(String tipo) {
+	TipoDeHora(String tipo) {
 		this.tipo = tipo;
 	}
 	public String getTipo() {
