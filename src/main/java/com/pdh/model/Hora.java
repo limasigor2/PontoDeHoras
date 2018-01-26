@@ -6,7 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +16,7 @@ import javax.validation.constraints.NotNull;
 @Entity(name="hora")
 public class Hora {
 
-	@Id()
+	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer id;
 	
@@ -29,9 +28,8 @@ public class Hora {
     @Enumerated(EnumType.STRING)
     private TipoDeHora tipo;
     
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", nullable = false, insertable=false, updatable=false)
+    @ManyToOne
+    @JoinColumn(name = "id", insertable=false, updatable=false)
 	public Funcionario func;
 
     public Hora() {
@@ -86,29 +84,6 @@ public class Hora {
 		this.func = func;
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Hora other = (Hora) obj;
-		if (func == null) {
-			if (other.func != null)
-				return false;
-		} else if (!func.equals(other.func))
-			return false;
-		if (localDateTime == null) {
-			if (other.localDateTime != null)
-				return false;
-		} else if (!localDateTime.equals(other.localDateTime))
-			return false;
-		if (tipo != other.tipo)
-			return false;
-		return true;
-	}
 	@Override
 	public String toString() {
 		System.out.println("Passei na hora");

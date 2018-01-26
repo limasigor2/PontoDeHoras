@@ -3,35 +3,52 @@ package com.pdh.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity(name="funcionario")
-public class Funcionario extends Pessoa {
+public class Funcionario {
+
+	@Id
+	@Column(name="func_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	
+	@Column(name="nome")
+	@NotNull
+	@Size(min=5, max=100, message="O nome deve ser entre {min} e {max}.")
+	private String nome;
+
+	@Column(name="cpf")
+	@NotNull
+	private String cpf;
+	
+	@OneToMany(mappedBy = "func")
+	public List<Hora> horas;
 
 	public Funcionario(String nome, String cpf) {
-		super(nome, cpf);
+		this.setNome(nome);
+		this.setCpf(cpf);
 		this.horas = new ArrayList<>();
 	}
 
-	
 	public Funcionario() {
-		super();
 		this.horas = new ArrayList<>();
-		super.setNome("");
-		super.setCpf("");
 	}
 
-	@OneToMany(cascade = CascadeType.ALL,
-    		fetch = FetchType.LAZY,
-    		mappedBy = "func")
-	public List<Hora> horas;
 	
 	public void adicionarHora(Hora hora) {
+		if(this.horas.equals(null))
+			horas = new ArrayList<>();
 		this.horas.add(hora);
+		hora.setFunc(this);
 	}
 	public boolean removeHora(Hora hora) {
 		for(Hora h: horas)
@@ -49,14 +66,28 @@ public class Funcionario extends Pessoa {
 	public List<Hora> getHoras(){
 		return horas;
 	}
-	@Override
-	public String toString() {
-		String str = "";
-		for (int i = 0; i < horas.size();i++) {
-			str += horas.get(i).toString() + "\n";
-		}
-		return "Funcionario [horas=" + str + ", nome=" +  super.getNome()+", cpf=" +super.getCpf() +"]";
+
+	public Integer getId() {
+		return id;
 	}
 
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 }
