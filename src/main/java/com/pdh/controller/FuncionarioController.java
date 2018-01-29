@@ -48,6 +48,17 @@ public class FuncionarioController {
 		service.save(funcionario);
 		return findAll();
 	}
+	@GetMapping(path="/funcionarios/hora/add")
+	public ModelAndView addHoraFuncionario() {
+		ModelAndView mv = new ModelAndView("/funcionarios/add_hora");
+		return findAll();
+	}
+	@PostMapping(path="/funcionarios/hora/add/{func_id}/{hora}/{dia}/{mes}/{ano}")
+	public ModelAndView addHora(@PathVariable("func_id") int func_id, @PathVariable int hora,
+								@PathVariable int dia, @PathVariable int mes, @PathVariable int ano){
+		
+		return findAll();
+	}
 
 
 

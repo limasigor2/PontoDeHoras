@@ -1,11 +1,10 @@
 package com.pdh.model;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,48 +15,48 @@ import javax.validation.constraints.NotNull;
 @Entity(name="hora")
 public class Hora {
 
+@Override
+	public String toString() {
+		return "Hora [id_hora=" + id_hora + ", tipo=" + tipo + ", minuto=" + minuto + ", dia=" + dia + ", mes=" + mes
+				+ ", ano=" + ano + ", funcionario=" + funcionario.getId() + "]";
+	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public Integer id;
+	public Integer id_hora;
 	
-    @NotNull
-	@Column
-	private LocalDateTime localDateTime;
 	
     @NotNull
     @Enumerated(EnumType.STRING)
     private TipoDeHora tipo;
+
+    @NotNull
+    @Column
+    private int minuto;
     
-    @ManyToOne
-    @JoinColumn(name = "id", insertable=false, updatable=false)
-	public Funcionario func;
+    @NotNull
+    @Column
+    private int dia;
 
-    public Hora() {
-		this.tipo = null;
-		this.localDateTime = null;
-	}
-	
-	public Hora(TipoDeHora tipo) {
-		this.tipo = tipo;
-		this.localDateTime = null;
-	}
-	
-	public Hora(TipoDeHora tipo, int year, int month, int dayOfMonth, int hour, int minute) {
-		this.localDateTime = LocalDateTime.of(year, month, dayOfMonth, hour, minute);
-		this.tipo = tipo;
-	}
-	
-	public Hora(TipoDeHora tipo, LocalDateTime localDateTime) {
-		this.tipo = tipo;
-		this.localDateTime = localDateTime;
-	}
-	
-	public LocalDateTime getLocalDateTime() {
-		return localDateTime;
+    @NotNull
+    @Column
+    private int mes;
+    
+    @NotNull
+    @Column
+    private int ano;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "funcionario_id")
+    private Funcionario funcionario;
+
+    
+    public Integer getId_hora() {
+		return id_hora;
 	}
 
-	public void setLocalDateTime(LocalDateTime horario) {
-		this.localDateTime = horario;
+	public void setId_hora(Integer id_hora) {
+		this.id_hora = id_hora;
 	}
 
 	public TipoDeHora getTipo() {
@@ -68,26 +67,65 @@ public class Hora {
 		this.tipo = tipo;
 	}
 
-	public Integer getId() {
-		return id;
+	public int getMinuto() {
+		return minuto;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setMinuto(int minuto) {
+		this.minuto = minuto;
 	}
 
-	public Funcionario getFunc() {
-		return func;
+	public int getDia() {
+		return dia;
 	}
 
-	public void setFunc(Funcionario func) {
-		this.func = func;
+	public void setDia(int dia) {
+		this.dia = dia;
+	}
+
+	public int getMes() {
+		return mes;
+	}
+
+	public void setMes(int mes) {
+		this.mes = mes;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
+	public Hora() {}
+
+	public Hora(TipoDeHora tipo, int minuto, int dia, int mes, int ano) {
+		super();
+		this.tipo = tipo;
+		this.minuto = minuto;
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
 	}
 	
-	@Override
-	public String toString() {
-		System.out.println("Passei na hora");
-		return "Hora [id=" + id + ", localDateTime=" + localDateTime + ", tipo=" + tipo  + "]";
+	public Hora(TipoDeHora tipo, int minuto, int dia, int mes, int ano, Funcionario funcionario) {
+		super();
+		this.tipo = tipo;
+		this.minuto = minuto;
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
+		this.funcionario = funcionario;
 	}
-
+    
 }

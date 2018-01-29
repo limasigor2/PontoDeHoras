@@ -3,7 +3,6 @@ package com.pdh.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import java.time.LocalDateTime;
 
 import com.pdh.model.Funcionario;
 import com.pdh.model.Hora;
@@ -11,28 +10,26 @@ import com.pdh.model.TipoDeHora;
 import com.pdh.repository.FuncionarioDao;
 import com.pdh.repository.HoraDao;
 
+
 @Controller
 public class WebController {
 
 	@Autowired
-	private FuncionarioDao funcionarioDao;
-
+	private FuncionarioDao funcionarioRepository;
+	
 	@Autowired
-	private HoraDao horaDao;
+	private HoraDao horaRepository;
 	
 	@RequestMapping(value={"/","home"})
     public String home(){
-		Funcionario func = funcionarioDao.getOne(1);
-		Hora hora1 = new Hora(TipoDeHora.ENTRADA_MANHA, LocalDateTime.now());
-		Hora hora2 = new Hora(TipoDeHora.SAIDA_MANHA, LocalDateTime.now());
-		hora1.setId(2);
-//		hora2.setId(3);
+		Funcionario func = funcionarioRepository.getOne(2);
+		Hora hora = new Hora(TipoDeHora.ENTRADA_MANHA, 01, 1, 11, 2015);
+		func.adicionarHora(hora);
+		System.out.println(hora);
 		System.out.println(func);
-		func.adicionarHora(hora1);
-		func.adicionarHora(hora2);
-		hora1.setFunc(func);
-		horaDao.save(hora1);
-		funcionarioDao.save(func);
+		horaRepository.save(hora);
+		funcionarioRepository.save(func);
+		
 		return "home";
     }
     @RequestMapping(value={"/welcome"})

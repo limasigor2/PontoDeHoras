@@ -29,6 +29,13 @@
 						</div>
 					</div>
 					<div class="row">
+						<div class="input-field col s12">
+							<input id="po" th:field="*{PO}" type="text" class="validate"/>
+							<label for="po">PO</label>
+						</div>
+					</div>
+
+					<div class="row">
                     	<button type="submit" class="btn btn-sm btn-primary">Salvar</button>
                     	<a th:href="@{/}" class="btn">Cancelar</a>
 					</div>

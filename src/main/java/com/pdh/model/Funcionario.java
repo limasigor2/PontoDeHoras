@@ -3,8 +3,10 @@ package com.pdh.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,12 +32,22 @@ public class Funcionario {
 	@NotNull
 	private String cpf;
 	
-	@OneToMany(mappedBy = "func")
-	public List<Hora> horas;
 
-	public Funcionario(String nome, String cpf) {
+    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    public List<Hora> horas = new ArrayList<>();
+	
+	@Override
+	public String toString() {
+		return "Funcionario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", horas=" + horas + ", PO=" + PO + "]";
+	}
+	@Column(name="PO")
+	@NotNull
+	private String PO;
+
+	public Funcionario(String nome, String cpf, String PO) {
 		this.setNome(nome);
 		this.setCpf(cpf);
+		this.setPO(PO);
 		this.horas = new ArrayList<>();
 	}
 
@@ -47,8 +59,11 @@ public class Funcionario {
 	public void adicionarHora(Hora hora) {
 		if(this.horas.equals(null))
 			horas = new ArrayList<>();
-		this.horas.add(hora);
-		hora.setFunc(this);
+		if(!horas.contains(hora)) {
+			this.horas.add(hora);
+		}
+		
+		hora.setFuncionario(this);
 	}
 	public boolean removeHora(Hora hora) {
 		for(Hora h: horas)
@@ -89,5 +104,11 @@ public class Funcionario {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	public String getPO() {
+		return this.PO;
+	}
+	public void setPO(String PO) {
+		this.PO = PO;
 	}
 }
