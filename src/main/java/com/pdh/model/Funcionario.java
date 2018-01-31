@@ -34,7 +34,7 @@ public class Funcionario {
 	
 
     @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    public List<Hora> horas = new ArrayList<>();
+    private List<Hora> horas = new ArrayList<>();
 	
 	@Override
 	public String toString() {
@@ -55,14 +55,12 @@ public class Funcionario {
 		this.horas = new ArrayList<>();
 	}
 
-	
 	public void adicionarHora(Hora hora) {
 		if(this.horas.equals(null))
 			horas = new ArrayList<>();
 		if(!horas.contains(hora)) {
 			this.horas.add(hora);
 		}
-		
 		hora.setFuncionario(this);
 	}
 	public boolean removeHora(Hora hora) {

@@ -2,18 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<head th:replace="template :: header">
 	</head>
-
- <body>
-	<head th:replace="template :: navbar"/>
-     <div class="body">
-	    <h1> Hello! This is Welcome Page!</h1>
-	     
-	     <a th:href="@{/}">Go to Home Page!</a>
-	     <br/>
-	     
-	     <form th:action="@{/logout}" method="post">
-	         <input type="submit" value="Sign Out"/>
-	     </form>
-	</div>
- </body>
+	<body>
+		<head th:replace="template :: navbar"/>
+		<div class="body">
+			<h1> Hello! This is Welcome Page!</h1>
+			<a th:href="@{/}">Go to Home Page!</a>
+			<br/>
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" value="Sign Out"/>	
+			</form>
+		</div>
+	</body>
 </html>

@@ -4,32 +4,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.pdh.model.Funcionario;
-import com.pdh.model.Hora;
-import com.pdh.model.TipoDeHora;
-import com.pdh.repository.FuncionarioDao;
-import com.pdh.repository.HoraDao;
-
+import com.pdh.service.HoraService;
+import com.pdh.service.FuncionarioService;
 
 @Controller
 public class WebController {
-
+		
 	@Autowired
-	private FuncionarioDao funcionarioRepository;
-	
+	private HoraService horaService;
 	@Autowired
-	private HoraDao horaRepository;
+	private FuncionarioService funcionarioService;
 	
 	@RequestMapping(value={"/","home"})
     public String home(){
-		Funcionario func = funcionarioRepository.getOne(2);
-		Hora hora = new Hora(TipoDeHora.ENTRADA_MANHA, 01, 1, 11, 2015);
-		func.adicionarHora(hora);
-		System.out.println(hora);
-		System.out.println(func);
-		horaRepository.save(hora);
-		funcionarioRepository.save(func);
-		
+		horaService.getAllByMonthByYearByFuncionario(funcionarioService.findOne(2), 1, 2017);
 		return "home";
     }
     @RequestMapping(value={"/welcome"})
@@ -46,7 +34,7 @@ public class WebController {
     public String login(){
         return "login";
     }
-    
+
     @RequestMapping(value="/403")
     public String Error403(){
         return "403";

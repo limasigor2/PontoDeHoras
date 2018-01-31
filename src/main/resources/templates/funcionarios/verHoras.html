@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<header th:replace="template :: header">
+	</header>
+	<body>
+		<head th:replace="template :: navbar"/>
+		<div class="container">
+			<table class="table bordered striped responsive-table">
+				<thead>
+					<tr>
+						<th>Hora</th>
+						<th>Data</th>
+						<th>Tipo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="entrada : ${lista}">
+						<td th:text="${entrada.time}"></td>
+						<td th:text="${#temporals.format(entrada.date, 'dd/MM/yyyy')}"></td>
+						<td th:text="${entrada.tipo}"></td>
+					</tr>
+				</tbody>
+			</table>
+			<div th:replace="template :: javascript"></div>
+		</div>
+	</body>
+</html>
