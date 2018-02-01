@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pdh.model.Funcionario;
-import com.pdh.model.Hora;
+import com.pdh.model.DiaDeTrabalho;
 import com.pdh.service.FuncionarioService;
-import com.pdh.service.HoraService;
+import com.pdh.service.DiaDeTrabalhoService;
 
 @Controller
-public class HoraController {
+public class DiaDeTrabalhoController {
 
 	@Autowired
-	private HoraService horaService;
+	private DiaDeTrabalhoService diaDeTrabalhoService;
 	
 	@Autowired
 	private FuncionarioService funcionarioService;
@@ -26,21 +26,20 @@ public class HoraController {
 	@Autowired
 	private FuncionarioController funcionarioController;
 	
-	@GetMapping("/hora/add")
-	public ModelAndView addHora(Hora hora) {
+	@GetMapping("/diaDeTrabalho/add")
+	public ModelAndView addHora(DiaDeTrabalho diaDeTrabalho) {
 		ModelAndView mv = new ModelAndView("/funcionarios/listar");
-		mv.addObject("hora", hora);
+		mv.addObject("diaDeTrabalho", diaDeTrabalho);
 		return mv;
 	}
-	@PostMapping("/hora/save")
-	public ModelAndView save(@Valid Hora hora, BindingResult result) {
+	@PostMapping("/diaDeTrabalho/save")
+	public ModelAndView save(@Valid DiaDeTrabalho diaDeTrabalho, BindingResult result) {
 		if(result.hasErrors()) {
-			funcionarioController.findAll(new Hora());
+			funcionarioController.findAll(new DiaDeTrabalho());
 		}
-		Funcionario func = hora.getFuncionario();
-		horaService.save(hora);
+		Funcionario func = diaDeTrabalho.getFuncionario();
+		diaDeTrabalhoService.save(diaDeTrabalho);
 		funcionarioService.save(func);
-		funcionarioController.findAll(new Hora());
-		return null;
+		return funcionarioController.findAll(new DiaDeTrabalho());
 	}
 }

@@ -1,23 +1,15 @@
 package com.pdh.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.pdh.service.HoraService;
-import com.pdh.service.FuncionarioService;
+
 
 @Controller
 public class WebController {
-		
-	@Autowired
-	private HoraService horaService;
-	@Autowired
-	private FuncionarioService funcionarioService;
-	
+
 	@RequestMapping(value={"/","home"})
     public String home(){
-		horaService.getAllByMonthByYearByFuncionario(funcionarioService.findOne(2), 1, 2017);
 		return "home";
     }
     @RequestMapping(value={"/welcome"})

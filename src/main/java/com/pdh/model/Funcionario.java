@@ -32,52 +32,54 @@ public class Funcionario {
 	@NotNull
 	private String cpf;
 	
-
-    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Hora> horas = new ArrayList<>();
-	
-	@Override
-	public String toString() {
-		return "Funcionario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", horas=" + horas + ", PO=" + PO + "]";
-	}
 	@Column(name="PO")
 	@NotNull
 	private String PO;
+
+    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<DiaDeTrabalho> diasDeTrabalho = new ArrayList<>();
+	
+	@Override
+	public String toString() {
+		return "Funcionario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", horas=" + diasDeTrabalho + ", PO=" + PO + "]";
+	}
+	
+
 
 	public Funcionario(String nome, String cpf, String PO) {
 		this.setNome(nome);
 		this.setCpf(cpf);
 		this.setPO(PO);
-		this.horas = new ArrayList<>();
+		this.diasDeTrabalho = new ArrayList<>();
 	}
 
 	public Funcionario() {
-		this.horas = new ArrayList<>();
+		this.diasDeTrabalho = new ArrayList<>();
 	}
 
-	public void adicionarHora(Hora hora) {
-		if(this.horas.equals(null))
-			horas = new ArrayList<>();
-		if(!horas.contains(hora)) {
-			this.horas.add(hora);
+	public void adicionarDiaDeTrabalho(DiaDeTrabalho diaDeTrabalho) {
+		if(this.diasDeTrabalho.equals(null))
+			diasDeTrabalho = new ArrayList<>();
+		if(!diasDeTrabalho.contains(diaDeTrabalho)) {
+			this.diasDeTrabalho.add(diaDeTrabalho);
 		}
-		hora.setFuncionario(this);
+		diaDeTrabalho.setFuncionario(this);
 	}
-	public boolean removeHora(Hora hora) {
-		for(Hora h: horas)
+	public boolean removerDiaDeTrabalho(DiaDeTrabalho diaDeTrabalho) {
+		for(DiaDeTrabalho h: diasDeTrabalho)
 			if(h.equals(h)) {
-				horas.remove(h);
+				diasDeTrabalho.remove(h);
 				return true;
 			}
 		return false;
 	}
 	
-	public void setHoras(List<Hora> lista) {
-		this.horas =lista;
+	public void setDiasDeTrabalho(List<DiaDeTrabalho> lista) {
+		this.diasDeTrabalho =lista;
 	}
 	
-	public List<Hora> getHoras(){
-		return horas;
+	public List<DiaDeTrabalho> getDiasDeTrabalho(){
+		return diasDeTrabalho;
 	}
 
 	public Integer getId() {

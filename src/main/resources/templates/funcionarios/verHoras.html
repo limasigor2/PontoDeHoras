@@ -8,17 +8,27 @@
 			<table class="table bordered striped responsive-table">
 				<thead>
 					<tr>
-						<th>Hora</th>
 						<th>Data</th>
-						<th>Tipo</th>
+						<th>Entrada</th>
+						<th>Saída</th>
+						<th>Saída <br/>Almoço</th>
+						<th>Retorno <br/>Almoço</th>
+						<th>Horas Trabalhas <br/>no Dia</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="entrada : ${lista}">
-						<td th:text="${entrada.time}"></td>
-						<td th:text="${#temporals.format(entrada.date, 'dd/MM/yyyy')}"></td>
-						<td th:text="${entrada.tipo}"></td>
-					</tr>
+					<div th:each="diaDeTrabalho : ${lista}">
+						<div th:each="i : ${#numbers.sequence(1, 31)}">
+							<tr th:if="${diaDeTrabalho.date.dayOfMonth} == ${i}">
+								<td th:text="${#temporals.format(diaDeTrabalho.date, 'dd/MM/yyyy')}"></td>
+								<td th:text="${diaDeTrabalho.entrada}"></td>
+								<td th:text="${diaDeTrabalho.saidaAlmoco}"></td>
+								<td th:text="${diaDeTrabalho.entradaAlmoco}"></td>
+								<td th:text="${diaDeTrabalho.saida}"></td>
+
+							</tr>
+						</div>
+					</div>
 				</tbody>
 			</table>
 			<div th:replace="template :: javascript"></div>

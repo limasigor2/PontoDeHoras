@@ -13,7 +13,7 @@
 					<tr>
 						<th>Nome</th>
 						<th>Opções</th>
-						<th>Adicionar Entrada/Saída</th>
+						<th>Adicionar Dia de Trabalho</th>
 						<th>Ver Horas</th>
 					</tr>
 				</thead>
@@ -39,13 +39,19 @@
 									<h4 th:text="${funcionario.PO}"></h4>
 									<!-- input type="text" class="timepicker"/>
   									<input type="text" class="datepicker"/-->
-  										<form action="" th:action="@{/hora/save}" th:object="${hora}" method="POST" class="form-horizontal">
-  											<input type="hidden" th:object="${funcionario}" th:value="${funcionario}" id="funcionario" name="funcionario"/>
-											<input type="date" class="datepicker" id="date" placeholder="Date" th:field="*{date}"/>
-											<input type="time" class="timepicker" id="time" placeholder="Time" th:field="*{time}"/>
-			  									<select th:field="*{tipo}">
-			  										<option th:each="tipoDeHora : ${TiposDeHora}" th:value="${tipoDeHora}"  th:text="${tipoDeHora}"></option>
-			  									</select>
+  										<form action="" th:action="@{/diaDeTrabalho/save}" th:object="${diaDeTrabalho}" method="POST" class="form-horizontal">
+											<input required="true" type="hidden" th:object="${funcionario}" th:value="${funcionario.id}" id="funcionario" name="funcionario"/>
+											<label for="date">Data</label>
+											<input required="true" type="date" class="datepicker" id="date" placeholder="Date" th:field="*{date}"/>
+											<label for="entrada">Hora que o funcionário entrou:</label>
+											<input required="true" type="time" class="timepicker" id="entrada" placeholder="Time" th:field="*{entrada}"/>
+											<label for="saidaAlmoco">Hora que o funcionário saiu para o almoco:</label>
+											<input required="true" type="time" class="timepicker" id="saidaAlmoco" placeholder="Time" th:field="*{saidaAlmoco}"/>
+											<label for="entradaAlmoco">Hora que o funcionário voltou do almoço:</label>
+											<input required="true" type="time" class="timepicker" id="entradaAlmoco" placeholder="Time" th:field="*{entradaAlmoco}"/>
+											<label for="saida">Hora que o funcionário saiu:</label>
+											<input required="true" type="time" class="timepicker" id="saida" placeholder="Time" th:field="*{saida}"/>
+										
 									      	<button type="submit" class="btn btn-sm btn-primary">Salvar</button>
 										</form>						
   								</div>
@@ -55,21 +61,35 @@
 							</div>
 						</td>
 						<td>
-						  <button data-target="modal1" class="btn modal-trigger">Ver Horas</button>
-							<div id="modal1" class="modal bottom-sheet">
+							<a class="waves-effect waves-light btn modal-trigger" th:href="'#modal-ver-horas' + ${funcionario.id}" >
+								Ver Horas
+							</a>
+							<div th:id="'modal-ver-horas' + ${funcionario.id}" class="modal modal-fixed-footer">
 								<div class="modal-content">
-								<form th:action="@{/funcionarios/verhoras/}">
-									<input type="number" name="ano"/>
-									<input type="number" name="mes"/>
-									<input type="hidden" name="id" th:value="${funcionario.id}"/>
-									<input type="submit" class="waves-effect waves-light btn"/>
-								</form>
-								</div>
+									<form th:action="@{/funcionarios/verhoras/}">
+										<select name="mes">
+											<option value="1">Janeiro</option>
+											<option value="2">Fevereiro</option>
+											<option value="3">Março</option>
+											<option value="4">Abril</option>
+											<option value="5">Maio</option>
+											<option value="6">Junho</option>
+											<option value="7">Julho</option>
+											<option value="8">Agosto</option>
+											<option value="9">Setembro</option>
+											<option value="10">Outubro</option>
+											<option value="11">Novembro</option>
+											<option value="12">Dezembro</option>
+										</select>
+										<input type="number" name="ano" placeholder="ano"/>
+										<input type="hidden" name="id" th:value="${funcionario.id}"/>
+										<input type="submit" class="waves-effect waves-light btn"/>
+									</form>
+  								</div>
 								<div class="modal-footer">
-									<a href="" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+									<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
 								</div>
 							</div>
-							
 						</td>
 					</tr>
 				</tbody>
@@ -78,6 +98,5 @@
 		<div th:replace="template :: javascript"></div>
 		<script type="text/javascript" th:src="@{/js/modal.js}"></script>
 		<script type="text/javascript" th:src="@{/js/listar_func.js}"></script>
-
 	</body>
 </html>
