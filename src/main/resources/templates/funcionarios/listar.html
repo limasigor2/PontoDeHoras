@@ -8,6 +8,9 @@
 			<div>
 				<h3 class="header center-on-small-only">Funcionarios</h3>
 			</div>
+			<div th:if="${msg} != ''" class="chip" th:text="${msg}">
+				<i class="close material-icons">close</i>
+			</div>
 			<table class="table bordered striped responsive-table">
 				<thead>
 					<tr>
@@ -30,15 +33,11 @@
 						</td>
 						<td>
 							<a class="waves-effect waves-light btn modal-trigger" th:href="'#modal' + ${funcionario.id}" >
-							      <i class="material-icons">edit</i>
+							      <i class="material-icons">add</i>
 							</a>
 							<div th:id="'modal' + ${funcionario.id}" class="modal modal-fixed-footer">
 								<div class="modal-content">
-									<h4 th:text="${funcionario.nome}"></h4>
-									<h4 th:text="${funcionario.id}"></h4>
-									<h4 th:text="${funcionario.PO}"></h4>
-									<!-- input type="text" class="timepicker"/>
-  									<input type="text" class="datepicker"/-->
+									<h4 th:text="'Adiconar dia de servico ao ' + ${funcionario.nome}"></h4>	
   										<form action="" th:action="@{/diaDeTrabalho/save}" th:object="${diaDeTrabalho}" method="POST" class="form-horizontal">
 											<input required="true" type="hidden" th:object="${funcionario}" th:value="${funcionario.id}" id="funcionario" name="funcionario"/>
 											<label for="date">Data</label>
@@ -66,6 +65,7 @@
 							</a>
 							<div th:id="'modal-ver-entradas' + ${funcionario.id}" class="modal modal-fixed-footer">
 								<div class="modal-content">
+									<h4 th:text="'Ver as horas trabalhadas de ' + ${funcionario.nome}"></h4>	
 									<form th:action="@{/funcionarios/verentradas/}">
 										<select name="mes">
 											<option value="1">Janeiro</option>

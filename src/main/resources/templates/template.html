@@ -20,20 +20,19 @@
 		</nav>
 	</div>
 	<div th:fragment="navbar" class="navbar">
-		<ul id="usuarios" class="dropdown-content">
-			<li><a th:href="@{/usuarios/}">Ver todos</a></li>
-			<li><a th:href="@{/usuarios/add}">Adicionar</a></li>
-		</ul>
 		<ul id="funcionarios" class="dropdown-content">
 			<li><a th:href="@{/funcionarios/}">Ver todos</a></li>
 			<li><a th:href="@{/funcionarios/add}">Adicionar</a></li>
 		</ul>
 		<nav class="blue">
 			<div class="nav-wrapper">
-				<a href="#" class="brand-logo">SPH</a>
+				<a th:href="@{/funcionarios/}" class="brand-logo">SPH</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a class="dropdown-button" href="#" data-activates="funcionarios">Funcionarios<i class="material-icons right">arrow_drop_down</i></a></li>
-					<li><a class="dropdown-button" href="#" data-activates="usuarios">Usuarios<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li>
+						<a class="dropdown-button" href="#" data-activates="funcionarios">
+						Funcionarios<i class="material-icons right">arrow_drop_down</i>
+						</a>
+					</li>
 					<li>
 					     <form th:action="@{/logout}" method="post">
 					     		<input type="submit" value="Sair"></input>

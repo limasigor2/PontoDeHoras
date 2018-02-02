@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.pdh.model.Funcionario;
 import com.pdh.model.DiaDeTrabalho;
-import com.pdh.service.FuncionarioService;
+import com.pdh.model.Funcionario;
 import com.pdh.service.DiaDeTrabalhoService;
+import com.pdh.service.FuncionarioService;
 
 @Controller
 public class FuncionarioController {
@@ -28,7 +28,7 @@ public class FuncionarioController {
 	@GetMapping(path="/funcionarios")
 	public ModelAndView findAll(DiaDeTrabalho diaDeTrabalho) {
 		ModelAndView mv = new ModelAndView("/funcionarios/listar");
-		
+		mv.addObject("msg", "");
 		mv.addObject("funcionarios", funcionarioService.findAll());
 		mv.addObject("diaDeTrabalho", diaDeTrabalho);
 		
@@ -48,26 +48,48 @@ public class FuncionarioController {
 	public ModelAndView add(Funcionario funcionario) {
 		ModelAndView mv = new ModelAndView("/funcionarios/add");
 		mv.addObject("funcionario", funcionario);
-		
 		return mv;
 	}
+	
 	@GetMapping(path="/funcionarios/edit/{id}")
 	public ModelAndView edit(@PathVariable("id") int id) {
 		return add(funcionarioService.findOne(id));
 	}
+	
 	@GetMapping(path="/funcionarios/delete/{id}")
 	public ModelAndView delete(@PathVariable("id") int id) {
 		funcionarioService.delete(id);
-		return findAll(new DiaDeTrabalho());
+		ModelAndView mv = new ModelAndView("/funcionarios/listar");
+		
+		mv.addObject("funcionarios", funcionarioService.findAll());
+		mv.addObject("diaDeTrabalho", new DiaDeTrabalho());
+		mv.addObject("msg", "funcionario excluido com sucesso");
+		return mv;
 	}
+	
 	@PostMapping(path="/funcionarios/save")
 	public ModelAndView save(@Valid Funcionario funcionario, BindingResult result) {
-		if(result.hasErrors())
+		ModelAndView mv = new ModelAndView("/funcionarios/listar");
+
+		if(result.hasErrors()) {
+			mv.addObject("msg", "Não foi possível salvar ou atualizar o funcionário");
 			return findAll(new DiaDeTrabalho());
+		}
+			
+		if(funcionario.getId() == null) {
+			funcionarioService.save(funcionario);
+			mv.addObject("msg", "funcionario adicionado com sucesso");
+		}else {
+			funcionarioService.save(funcionario);
+			mv.addObject("msg", "funcionario atualizado com sucesso");
+		}
 		
-		funcionarioService.save(funcionario);
-		return findAll(new DiaDeTrabalho());
+		mv.addObject("funcionarios", funcionarioService.findAll());
+		mv.addObject("diaDeTrabalho", new DiaDeTrabalho());
+		
+		return mv;
 	}
+	
 	@GetMapping(path="/funcionarios/entradaousaida/add")
 	public ModelAndView addDiaDeTrabalhoFuncionario() {
 		return findAll(new DiaDeTrabalho());

@@ -2,24 +2,27 @@ package com.pdh.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 
 
 @Controller
 public class WebController {
 
-	@RequestMapping(value={"/","home"})
-    public String home(){
-		return "home";
+	@RequestMapping(path={"/","home"})
+    public ModelAndView home(){
+		ModelAndView mv = new ModelAndView("login");
+		return mv;
+	}
+
+    @RequestMapping(path="/login")
+    public ModelAndView login(){
+        ModelAndView mv = new ModelAndView("login");
+    	return mv;
     }
 
-    @RequestMapping(value={"/login"})
-    public String login(){
-        return "login";
-    }
-
-    @RequestMapping(value="/403")
-    public String Error403(){
-        return "403";
+    @RequestMapping(path="/403")
+    public ModelAndView Error403(){
+        return new ModelAndView("403");
     }
 }
