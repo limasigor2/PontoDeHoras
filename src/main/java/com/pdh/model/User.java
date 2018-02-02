@@ -21,7 +21,7 @@ public class User{
 	@NotNull
 	@Size(min=5, max=100, message="O nome deve ser entre {min} e {max}.")
 	private String nome;
-
+	
 	@Column(name="cpf_user")
 	@NotNull
 	private String cpf;
@@ -84,6 +84,11 @@ public class User{
 	public String getPassword() {
 		return this.password;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", nomeUsuario=" + nomeUsuario + ", password="
+				+ password + "]";
+	}
 		
 }

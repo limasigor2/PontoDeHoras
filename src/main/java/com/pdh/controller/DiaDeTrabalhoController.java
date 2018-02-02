@@ -27,16 +27,15 @@ public class DiaDeTrabalhoController {
 	private FuncionarioController funcionarioController;
 	
 	@GetMapping("/diaDeTrabalho/add")
-	public ModelAndView addHora(DiaDeTrabalho diaDeTrabalho) {
+	public ModelAndView addDiaDeTrabalho(DiaDeTrabalho diaDeTrabalho) {
 		ModelAndView mv = new ModelAndView("/funcionarios/listar");
 		mv.addObject("diaDeTrabalho", diaDeTrabalho);
 		return mv;
 	}
 	@PostMapping("/diaDeTrabalho/save")
 	public ModelAndView save(@Valid DiaDeTrabalho diaDeTrabalho, BindingResult result) {
-		if(result.hasErrors()) {
+		if(result.hasErrors()) 
 			funcionarioController.findAll(new DiaDeTrabalho());
-		}
 		Funcionario func = diaDeTrabalho.getFuncionario();
 		diaDeTrabalhoService.save(diaDeTrabalho);
 		funcionarioService.save(func);

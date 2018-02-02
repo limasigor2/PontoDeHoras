@@ -39,12 +39,12 @@ public class Funcionario {
     @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<DiaDeTrabalho> diasDeTrabalho = new ArrayList<>();
 	
+	
 	@Override
 	public String toString() {
-		return "Funcionario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", horas=" + diasDeTrabalho + ", PO=" + PO + "]";
+		return "Funcionario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", PO=" + PO + ", diasDeTrabalho="
+				+ diasDeTrabalho + "]";
 	}
-	
-
 
 	public Funcionario(String nome, String cpf, String PO) {
 		this.setNome(nome);

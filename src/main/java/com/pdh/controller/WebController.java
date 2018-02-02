@@ -12,15 +12,6 @@ public class WebController {
     public String home(){
 		return "home";
     }
-    @RequestMapping(value={"/welcome"})
-    public String welcome(){
-        return "welcome";
-    }
-  
-    @RequestMapping(value="/admin")
-    public String admin(){
-        return "admin";
-    }
 
     @RequestMapping(value={"/login"})
     public String login(){

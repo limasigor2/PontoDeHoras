@@ -23,7 +23,7 @@ public class FuncionarioController {
 	private FuncionarioService funcionarioService;
 		
 	@Autowired
-	private DiaDeTrabalhoService horaService;
+	private DiaDeTrabalhoService diaDeTrabalhoService;
 	
 	@GetMapping(path="/funcionarios")
 	public ModelAndView findAll(DiaDeTrabalho diaDeTrabalho) {
@@ -34,11 +34,13 @@ public class FuncionarioController {
 		
 		return mv;
 	}
-	@GetMapping(path="/funcionarios/verhoras/")
-	public ModelAndView getHorasByFuncionario(@RequestParam("id") int id, @RequestParam("ano") int ano, @RequestParam("mes") int mes) {
+	@GetMapping(path="/funcionarios/verentradas/")
+	public ModelAndView getDiasDeTrabalhoByFuncionario(@RequestParam("id") int id, @RequestParam("ano") int ano, @RequestParam("mes") int mes) {
 		Funcionario funcionario = funcionarioService.findOne(id);
-		ModelAndView mv = new ModelAndView("/funcionarios/verHoras");
-		mv.addObject("lista", horaService.getAllByMonthByYearByFuncionario(funcionario, mes, ano));
+		ModelAndView mv = new ModelAndView("/funcionarios/verEntradasEOuSaidas");
+		mv.addObject("funcionario", funcionario);
+		mv.addObject("lista", diaDeTrabalhoService.getAllByMonthByYearByFuncionario(funcionario, mes, ano));
+		mv.addObject("total", diaDeTrabalhoService.getAllTempoDeServicoByMonthByYearByFuncionario(funcionario, mes, ano));
 		return mv;
 	}
 	
@@ -66,10 +68,8 @@ public class FuncionarioController {
 		funcionarioService.save(funcionario);
 		return findAll(new DiaDeTrabalho());
 	}
-	@GetMapping(path="/funcionarios/hora/add")
-	public ModelAndView addHoraFuncionario() {
-		//ModelAndView mv = new ModelAndView("/funcionarios/add_hora");
-		System.out.println("passei no /funcionarios/hora/add");
+	@GetMapping(path="/funcionarios/entradaousaida/add")
+	public ModelAndView addDiaDeTrabalhoFuncionario() {
 		return findAll(new DiaDeTrabalho());
 	}
 

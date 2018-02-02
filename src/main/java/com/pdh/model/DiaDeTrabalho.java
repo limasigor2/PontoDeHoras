@@ -3,6 +3,7 @@ package com.pdh.model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import java.text.DecimalFormat;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -44,8 +47,15 @@ public class DiaDeTrabalho {
     @Column(name="saida")
 	public LocalTime saida;
 	
-    public DiaDeTrabalho(Integer id, Funcionario funcionario, LocalTime entrada,
-				LocalTime saidaAlmoco, LocalTime entradaAlmoco, LocalTime saida) {
+	public String getTempoTrabalhado() {
+		long minutosTotais = ChronoUnit.MINUTES.between(this.getEntrada(), this.getSaidaAlmoco()) + ChronoUnit.MINUTES.between(this.getEntradaAlmoco(), this.getSaida());
+    	int horasTrabalhadas = (int) (minutosTotais/60);
+    	int minutosTrabalhados = (int) (minutosTotais % 60);
+    	return horasTrabalhadas + ":" + new DecimalFormat("00").format(minutosTrabalhados);
+    }
+
+	public DiaDeTrabalho(Integer id, Funcionario funcionario, LocalTime entrada,
+					LocalTime saidaAlmoco, LocalTime entradaAlmoco, LocalTime saida) {
 		this.setId(id);
 		this.setFuncionario(funcionario);
 		this.setEntrada(entrada);
@@ -54,7 +64,7 @@ public class DiaDeTrabalho {
 		this.setSaida(saida);
     }
     public DiaDeTrabalho(Funcionario funcionario, LocalTime entrada,
-			LocalTime saidaAlmoco, LocalTime entradaAlmoco, LocalTime saida) {
+					LocalTime saidaAlmoco, LocalTime entradaAlmoco, LocalTime saida) {
 	this.setFuncionario(funcionario);
 	this.setEntrada(entrada);
 	this.setEntradaAlmoco(entradaAlmoco);
@@ -118,6 +128,11 @@ public class DiaDeTrabalho {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+    @Override
+	public String toString() {
+		return "DiaDeTrabalho [id=" + id + ", funcionario=" + funcionario + ", date=" + date + ", entrada=" + entrada
+				+ ", saidaAlmoco=" + saidaAlmoco + ", entradaAlmoco=" + entradaAlmoco + ", saida=" + saida + "]";
 	}
 
 }

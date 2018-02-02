@@ -61,12 +61,12 @@
 							</div>
 						</td>
 						<td>
-							<a class="waves-effect waves-light btn modal-trigger" th:href="'#modal-ver-horas' + ${funcionario.id}" >
-								Ver Horas
+							<a class="waves-effect waves-light btn modal-trigger" th:href="'#modal-ver-entradas' + ${funcionario.id}" >
+								Ver Entradas
 							</a>
-							<div th:id="'modal-ver-horas' + ${funcionario.id}" class="modal modal-fixed-footer">
+							<div th:id="'modal-ver-entradas' + ${funcionario.id}" class="modal modal-fixed-footer">
 								<div class="modal-content">
-									<form th:action="@{/funcionarios/verhoras/}">
+									<form th:action="@{/funcionarios/verentradas/}">
 										<select name="mes">
 											<option value="1">Janeiro</option>
 											<option value="2">Fevereiro</option>
