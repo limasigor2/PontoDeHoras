@@ -30,5 +30,8 @@ public class FuncionarioService{
 	public void delete(Funcionario funcionario) {
 		repository.delete(funcionario);
 	}
+	public Funcionario findByUserName(String userName){
+		return repository.findByUserName(userName);
+	}
 
 }

@@ -3,13 +3,15 @@
 	<header th:replace="template :: header">
 	</header>
 	<body>
-		<head th:replace="template :: navbar"/>
+		<head th:replace="template :: navbar-ver-todos"/>
 		<div class="container">
 			<div>
+				<img th:src="@{/img/logo.png}" alt="Logo da MS Serviços" style="float:right"/>
 				<p th:text="'Nome: ' + ${funcionario.nome}"> </p>
 				<p th:text="'CPF: ' + ${funcionario.cpf}"></p>
 				<p th:text="'PO: ' + ${funcionario.PO}"></p>
 				<p th:text="'Total de horas trabalhadas por mês: ' + ${total}"></p>
+ 
 			
 			</div>
 			<table class="table bordered striped responsive-table">

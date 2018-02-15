@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +27,7 @@ public class Funcionario {
 	
 	@Column(name="nome")
 	@NotNull
-	@Size(min=5, max=100, message="O nome deve ser entre {min} e {max}.")
+	@Size(min=5, max=150, message="O nome deve ser entre {min} e {max}.")
 	private String nome;
 
 	@Column(name="cpf")
@@ -35,7 +37,20 @@ public class Funcionario {
 	@Column(name="PO")
 	@NotNull
 	private String PO;
+	
+	@Column(name="tipo")
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private TipoDeUsuario tipo;
 
+	@Column(name="senha")
+	@NotNull
+	private String senha;
+	
+	@Column(name="user_name")
+	@NotNull
+	private String userName;
+	
     @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<DiaDeTrabalho> diasDeTrabalho = new ArrayList<>();
 	
@@ -43,13 +58,16 @@ public class Funcionario {
 	@Override
 	public String toString() {
 		return "Funcionario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", PO=" + PO + ", diasDeTrabalho="
-				+ diasDeTrabalho + "]";
+				+ diasDeTrabalho +", tipo="+ tipo +", senha="+ senha+"]";
 	}
 
-	public Funcionario(String nome, String cpf, String PO) {
+	public Funcionario(String nome, String cpf, String PO, String tipo, String senha, String userName) {
 		this.setNome(nome);
 		this.setCpf(cpf);
 		this.setPO(PO);
+		this.setTipo(tipo);
+		this.setSenha(senha);
+		this.setUserName(userName);
 		this.diasDeTrabalho = new ArrayList<>();
 	}
 
@@ -110,5 +128,33 @@ public class Funcionario {
 	}
 	public void setPO(String PO) {
 		this.PO = PO;
+	}
+
+	public TipoDeUsuario getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = TipoDeUsuario.valueOf(tipo);
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public void setTipo(TipoDeUsuario tipo) {
+		this.tipo = tipo;
 	}
 }

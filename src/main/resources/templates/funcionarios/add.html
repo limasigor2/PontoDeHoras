@@ -18,30 +18,69 @@
 					<input type="hidden" th:field="*{id}"/>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="nome" th:field="*{nome}" type="text" class="validate"/>
+							<input id="nome" th:field="*{nome}" required="true" type="text" class="validate"/>
 							<label for="nome">Nome</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="cpf" th:field="*{cpf}" type="text" class="validate"/>
+							<input id="cpf" th:field="*{cpf}" required="true" type="text" class="validate"/>
 							<label for="cpf">CPF</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="po" th:field="*{PO}" type="text" class="validate"/>
+							<input id="po" th:field="*{PO}" required="true" type="text" class="validate"/>
 							<label for="po">PO</label>
 						</div>
 					</div>
-
 					<div class="row">
-                    	<button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+						<div class="input-field col s12">
+							<select th:field="*{tipo}">
+								<option th:each="tipoDeHora : ${TipoDeUsuario}" th:value="${tipoDeHora}"  th:text="${tipoDeHora}"></option>
+			  				</select>
+							<label for="tipo">Tipo</label>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="user_name" th:field="*{userName}" required="true" type="text" class="validate"/>
+							<label for="user_name">UserName</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="senha" th:field="*{senha}" required="true" type="text" class="validate"/>
+							<label for="senha">Senha</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="confimar-senha" required="true" type="text" class="validate"/>
+							<label for="confimar-senha">Confimar Senha</label>
+							  <span id='message'></span>
+						</div>
+					</div>
+					<div class="row">
+                    	<button id="submit" type="submit" class="btn btn-sm btn-primary">Salvar</button>
                     	<a th:href="@{/}" class="btn">Cancelar</a>
 					</div>
 				</form>
 			</div>
 		</div>
+					  				<select >
+			  					<option>a</option>
+			  					<option>b</option>
+			  					<option>c</option>
+			  				</select>
 		<div th:replace="template :: javascript"></div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('select').material_select();
+			});
+</script>
+		<script type="text/javascript" th:src="@{/js/check.js}"></script>
+		<script type="text/javascript" th:src="@{/js/navbar.js}"></script>
 	</body>
 </html>

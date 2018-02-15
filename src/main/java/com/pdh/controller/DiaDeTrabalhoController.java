@@ -28,7 +28,7 @@ public class DiaDeTrabalhoController {
 	
 	@GetMapping("/diaDeTrabalho/add")
 	public ModelAndView addDiaDeTrabalho(DiaDeTrabalho diaDeTrabalho) {
-		ModelAndView mv = new ModelAndView("/funcionarios/listar");
+		ModelAndView mv = new ModelAndView("funcionarios/listar");
 		mv.addObject("diaDeTrabalho", diaDeTrabalho);
 		mv.addObject("funcionarios", funcionarioService.findAll());
 		return mv;
@@ -36,7 +36,7 @@ public class DiaDeTrabalhoController {
 	
 	@PostMapping("/diaDeTrabalho/save")
 	public ModelAndView save(@Valid DiaDeTrabalho diaDeTrabalho, BindingResult result) {
-		ModelAndView mv = new ModelAndView("/funcionarios/listar");
+		ModelAndView mv = new ModelAndView("funcionarios/listar");
 
 		if(result.hasErrors()) {
 			mv.addObject("msg", "Não foi possível adicionar o dia de trabalhao ao funcionário selecionado");

@@ -1,5 +1,9 @@
 package com.pdh.controller;
 
+
+import java.util.Arrays;
+
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +14,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.pdh.model.DiaDeTrabalho;
 import com.pdh.model.Funcionario;
+import com.pdh.model.TipoDeUsuario;
 import com.pdh.service.DiaDeTrabalhoService;
 import com.pdh.service.FuncionarioService;
 
@@ -28,19 +34,23 @@ public class FuncionarioController {
 	@GetMapping(path="/funcionarios")
 	public ModelAndView findAll(DiaDeTrabalho diaDeTrabalho) {
 		ModelAndView mv = new ModelAndView("/funcionarios/listar");
-		mv.addObject("msg", "");
+		mv.addObject("msg","");
 		mv.addObject("funcionarios", funcionarioService.findAll());
 		mv.addObject("diaDeTrabalho", diaDeTrabalho);
-		
+		mv.addObject("TipoDeUsuario",Arrays.asList(TipoDeUsuario.values()));
+
 		return mv;
 	}
-	@GetMapping(path="/funcionarios/verentradas/")
+	@GetMapping(path="/funcionarios/verentradas")
 	public ModelAndView getDiasDeTrabalhoByFuncionario(@RequestParam("id") int id, @RequestParam("ano") int ano, @RequestParam("mes") int mes) {
 		Funcionario funcionario = funcionarioService.findOne(id);
-		ModelAndView mv = new ModelAndView("/funcionarios/verEntradasEOuSaidas");
+		ModelAndView mv = new ModelAndView(new RedirectView("/funcionarios/verentradas"));
 		mv.addObject("funcionario", funcionario);
-		mv.addObject("lista", diaDeTrabalhoService.getAllByMonthByYearByFuncionario(funcionario, mes, ano));
-		mv.addObject("total", diaDeTrabalhoService.getAllTempoDeServicoByMonthByYearByFuncionario(funcionario, mes, ano));
+		System.out.println(id);
+		System.out.println(ano);
+		System.out.println(mes);
+		//mv.addObject("lista", diaDeTrabalhoService.getAllByMonthByYearByFuncionario(funcionario, mes, ano));
+		//mv.addObject("total", diaDeTrabalhoService.getAllTempoDeServicoByMonthByYearByFuncionario(funcionario, mes, ano));
 		return mv;
 	}
 	
@@ -48,6 +58,7 @@ public class FuncionarioController {
 	public ModelAndView add(Funcionario funcionario) {
 		ModelAndView mv = new ModelAndView("/funcionarios/add");
 		mv.addObject("funcionario", funcionario);
+		mv.addObject("TipoDeUsuario",Arrays.asList(TipoDeUsuario.values()));
 		return mv;
 	}
 	
@@ -75,7 +86,25 @@ public class FuncionarioController {
 			mv.addObject("msg", "Não foi possível salvar ou atualizar o funcionário");
 			return findAll(new DiaDeTrabalho());
 		}
-			
+		if(funcionario.getNome().length() < 5) {
+			mv.addObject("msg", "Nome muito pequeno");
+			return findAll(new DiaDeTrabalho());
+		}else if(funcionario.getNome().length() > 150) {
+			mv.addObject("msg", "Nome muito grande");
+			return findAll(new DiaDeTrabalho());
+		}
+		if(funcionario.getCpf() == null) {
+			mv.addObject("msg", "Não foi possível salvar o funcionário, pois o CPF estava vazio");
+			return findAll(new DiaDeTrabalho());
+		}
+		if(funcionario.getPO() == null) {
+			mv.addObject("msg", "Não foi possível salvar o funcionário, pois o PO estava vazio");
+			return findAll(new DiaDeTrabalho());
+		}
+		if(funcionario.getTipo() == null) {
+			mv.addObject("msg", "Não foi possível salvar o funcionário, pois o Tipo estava vazio");
+			return findAll(new DiaDeTrabalho());
+		}
 		if(funcionario.getId() == null) {
 			funcionarioService.save(funcionario);
 			mv.addObject("msg", "funcionario adicionado com sucesso");
@@ -83,16 +112,35 @@ public class FuncionarioController {
 			funcionarioService.save(funcionario);
 			mv.addObject("msg", "funcionario atualizado com sucesso");
 		}
-		
 		mv.addObject("funcionarios", funcionarioService.findAll());
 		mv.addObject("diaDeTrabalho", new DiaDeTrabalho());
-		
 		return mv;
 	}
-	
-	@GetMapping(path="/funcionarios/entradaousaida/add")
-	public ModelAndView addDiaDeTrabalhoFuncionario() {
-		return findAll(new DiaDeTrabalho());
+
+	@PostMapping(path="/login")
+	public ModelAndView login(String userName, String senha, HttpSession session){
+		ModelAndView mv = new ModelAndView("/login");
+		Funcionario usuario = funcionarioService.findByUserName(userName) ;//= usuarioService.getByEmail(email);
+		if(usuario != null){
+			if(usuario.getSenha().equals(senha)){
+				session.setAttribute("usuario", usuario);
+				if(usuario.getTipo().equals(TipoDeUsuario.funcionario)) {
+					return this.findAll(new DiaDeTrabalho());// TODO dash-board funcionario;
+				}else if(usuario.getTipo().equals(TipoDeUsuario.socio)) {
+					return this.findAll(new DiaDeTrabalho());// TODO dash-board funcionario;
+				}else if(usuario.getTipo().equals(TipoDeUsuario.administrador)) {
+					return this.findAll(new DiaDeTrabalho());// TODO dash-board funcionario;
+				}
+			}
+			else{
+				mv.addObject("msg", "Senha incorreta.");
+				return mv;
+			}
+		}else{
+			mv.addObject("msg", "Senha incorreta.");
+			return mv;
+		}
+		return mv;
 	}
 
 }

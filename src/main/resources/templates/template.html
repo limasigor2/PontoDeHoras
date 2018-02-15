@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head th:fragment="header">
 		<title>Sistema de Ponto de Hora</title>
-		<meta http-equiv="Content-Type" name="viewport" content="text/html; width=device-width, initial-scale=1.0" charset="utf-8" />
+		<meta http-equiv="Content-Type" name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
 		<link th:href="@{/css/materialize.min.css}" rel="stylesheet"/>
 		<link th:href="@{/css/styles.css}" rel="stylesheet"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
@@ -19,12 +19,27 @@
 			</div>
 		</nav>
 	</div>
+		<div th:fragment="navbar-ver-todos" class="navbar-ver-todos">
+		<nav class="blue">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">MS Serviços</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+
+				</ul>
+			</div>
+		</nav>
+	</div>
 	<div th:fragment="navbar" class="navbar">
+		
+	
 		<ul id="funcionarios" class="dropdown-content">
 			<li><a th:href="@{/funcionarios/}">Ver todos</a></li>
 			<li><a th:href="@{/funcionarios/add}">Adicionar</a></li>
 		</ul>
 		<nav class="blue">
+			<a href="#" data-activates="menu-mobile" class="button-collapse">
+				<i class="material-icons">menu</i>
+			</a>
 			<div class="nav-wrapper">
 				<a th:href="@{/funcionarios/}" class="brand-logo">SPH</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -38,9 +53,17 @@
 					     		<input type="submit" value="Sair"></input>
 					     </form>
 					</li>
-
 				</ul>
-
+				<ul class="side-nav" id="menu-mobile">
+					<li class="center"><a th:href="@{/funcionarios/}">Ver todos funcionários</a></li>
+					<li class="center"><a th:href="@{/funcionarios/add}">Adicionar funcionário</a></li>
+					<li class="center">
+					     <form class="close-nav" th:action="@{/logout}" method="post">
+					     		<input type="submit" value="Sair"></input>
+					     </form>
+					</li>
+				</ul>
+				
 			</div>
 		</nav>
 	</div>

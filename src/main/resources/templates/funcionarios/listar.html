@@ -18,6 +18,7 @@
 						<th>Opções</th>
 						<th>Adicionar Dia de Trabalho</th>
 						<th>Ver Horas</th>
+						
 					</tr>
 				</thead>
 				<tbody>
@@ -66,7 +67,7 @@
 							<div th:id="'modal-ver-entradas' + ${funcionario.id}" class="modal modal-fixed-footer">
 								<div class="modal-content">
 									<h4 th:text="'Ver as horas trabalhadas de ' + ${funcionario.nome}"></h4>	
-									<form th:action="@{/funcionarios/verentradas/}">
+									<form th:action="@{/funcionarios/verentradas}">
 										<select name="mes">
 											<option value="1">Janeiro</option>
 											<option value="2">Fevereiro</option>
@@ -82,7 +83,7 @@
 											<option value="12">Dezembro</option>
 										</select>
 										<input type="number" name="ano" placeholder="ano"/>
-										<input type="hidden" name="id" th:value="${funcionario.id}"/>
+										<input type="hidden" name="id" th:name="id" th:value="${funcionario.id}"/>
 										<input type="submit" class="waves-effect waves-light btn"/>
 									</form>
   								</div>
