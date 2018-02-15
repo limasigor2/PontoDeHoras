@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
 import com.pdh.model.DiaDeTrabalho;
 import com.pdh.model.Funcionario;
@@ -44,13 +43,13 @@ public class FuncionarioController {
 	@GetMapping(path="/funcionarios/verentradas")
 	public ModelAndView getDiasDeTrabalhoByFuncionario(@RequestParam("id") int id, @RequestParam("ano") int ano, @RequestParam("mes") int mes) {
 		Funcionario funcionario = funcionarioService.findOne(id);
-		ModelAndView mv = new ModelAndView(new RedirectView("/funcionarios/verentradas"));
+		ModelAndView mv = new ModelAndView("/funcionarios/verentradas");
 		mv.addObject("funcionario", funcionario);
 		System.out.println(id);
 		System.out.println(ano);
 		System.out.println(mes);
-		//mv.addObject("lista", diaDeTrabalhoService.getAllByMonthByYearByFuncionario(funcionario, mes, ano));
-		//mv.addObject("total", diaDeTrabalhoService.getAllTempoDeServicoByMonthByYearByFuncionario(funcionario, mes, ano));
+		mv.addObject("lista", diaDeTrabalhoService.getAllByMonthByYearByFuncionario(funcionario, mes, ano));
+		mv.addObject("total", diaDeTrabalhoService.getAllTempoDeServicoByMonthByYearByFuncionario(funcionario, mes, ano));
 		return mv;
 	}
 	
