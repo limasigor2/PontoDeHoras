@@ -31,7 +31,10 @@ public class FuncionarioController {
 	private DiaDeTrabalhoService diaDeTrabalhoService;
 	
 	@GetMapping(path="/funcionarios")
-	public ModelAndView findAll(DiaDeTrabalho diaDeTrabalho) {
+	public ModelAndView findAll(DiaDeTrabalho diaDeTrabalho, HttpSession session) {
+		if(session.getAttribute("usuario") == null)
+			return new ModelAndView("login");
+
 		ModelAndView mv = new ModelAndView("/funcionarios/listar");
 		mv.addObject("msg","");
 		mv.addObject("funcionarios", funcionarioService.findAll());
@@ -81,29 +84,29 @@ public class FuncionarioController {
 	public ModelAndView save(@Valid Funcionario funcionario, BindingResult result) {
 		ModelAndView mv = new ModelAndView("/funcionarios/listar");
 
-		if(result.hasErrors()) {
-			mv.addObject("msg", "Não foi possível salvar ou atualizar o funcionário");
-			return findAll(new DiaDeTrabalho());
-		}
-		if(funcionario.getNome().length() < 5) {
-			mv.addObject("msg", "Nome muito pequeno");
-			return findAll(new DiaDeTrabalho());
-		}else if(funcionario.getNome().length() > 150) {
-			mv.addObject("msg", "Nome muito grande");
-			return findAll(new DiaDeTrabalho());
-		}
-		if(funcionario.getCpf() == null) {
-			mv.addObject("msg", "Não foi possível salvar o funcionário, pois o CPF estava vazio");
-			return findAll(new DiaDeTrabalho());
-		}
-		if(funcionario.getPO() == null) {
-			mv.addObject("msg", "Não foi possível salvar o funcionário, pois o PO estava vazio");
-			return findAll(new DiaDeTrabalho());
-		}
-		if(funcionario.getTipo() == null) {
-			mv.addObject("msg", "Não foi possível salvar o funcionário, pois o Tipo estava vazio");
-			return findAll(new DiaDeTrabalho());
-		}
+//		if(result.hasErrors()) {
+//			mv.addObject("msg", "Não foi possível salvar ou atualizar o funcionário");
+//			return findAll(new DiaDeTrabalho());
+//		}
+//		if(funcionario.getNome().length() < 5) {
+//			mv.addObject("msg", "Nome muito pequeno");
+//			return findAll(new DiaDeTrabalho());
+//		}else if(funcionario.getNome().length() > 150) {
+//			mv.addObject("msg", "Nome muito grande");
+//			return findAll(new DiaDeTrabalho());
+//		}
+//		if(funcionario.getCpf() == null) {
+//			mv.addObject("msg", "Não foi possível salvar o funcionário, pois o CPF estava vazio");
+//			return findAll(new DiaDeTrabalho());
+//		}
+//		if(funcionario.getPO() == null) {
+//			mv.addObject("msg", "Não foi possível salvar o funcionário, pois o PO estava vazio");
+//			return findAll(new DiaDeTrabalho());
+//		}
+//		if(funcionario.getTipo() == null) {
+//			mv.addObject("msg", "Não foi possível salvar o funcionário, pois o Tipo estava vazio");
+//			return findAll(new DiaDeTrabalho());
+//		}
 		if(funcionario.getId() == null) {
 			funcionarioService.save(funcionario);
 			mv.addObject("msg", "funcionario adicionado com sucesso");
@@ -124,11 +127,11 @@ public class FuncionarioController {
 			if(usuario.getSenha().equals(senha)){
 				session.setAttribute("usuario", usuario);
 				if(usuario.getTipo().equals(TipoDeUsuario.funcionario)) {
-					return this.findAll(new DiaDeTrabalho());// TODO dash-board funcionario;
+					return this.findAll(new DiaDeTrabalho(), session);// TODO dash-board funcionario;
 				}else if(usuario.getTipo().equals(TipoDeUsuario.socio)) {
-					return this.findAll(new DiaDeTrabalho());// TODO dash-board funcionario;
+					return this.findAll(new DiaDeTrabalho(), session);// TODO dash-board funcionario;
 				}else if(usuario.getTipo().equals(TipoDeUsuario.administrador)) {
-					return this.findAll(new DiaDeTrabalho());// TODO dash-board funcionario;
+					return this.findAll(new DiaDeTrabalho(), session);// TODO dash-board funcionario;
 				}
 			}
 			else{

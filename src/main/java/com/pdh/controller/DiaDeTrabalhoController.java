@@ -1,5 +1,6 @@
 package com.pdh.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,12 +36,12 @@ public class DiaDeTrabalhoController {
 	}
 	
 	@PostMapping("/diaDeTrabalho/save")
-	public ModelAndView save(@Valid DiaDeTrabalho diaDeTrabalho, BindingResult result) {
+	public ModelAndView save(@Valid DiaDeTrabalho diaDeTrabalho, BindingResult result, HttpSession session) {
 		ModelAndView mv = new ModelAndView("funcionarios/listar");
 
 		if(result.hasErrors()) {
 			mv.addObject("msg", "Não foi possível adicionar o dia de trabalhao ao funcionário selecionado");
-			funcionarioController.findAll(new DiaDeTrabalho());
+			funcionarioController.findAll(new DiaDeTrabalho(), session);
 		}
 		Funcionario func = diaDeTrabalho.getFuncionario();
 		

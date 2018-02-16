@@ -13,24 +13,21 @@ public class WebController {
 
 	@RequestMapping(path={"/","home"})
     public ModelAndView home(){
-		ModelAndView mv = new ModelAndView("login");
-		return mv;
+		return new ModelAndView("login");
 	}
 
     @RequestMapping(path="/login")
     public ModelAndView login(){
-        ModelAndView mv = new ModelAndView("login");
-    	return mv;
+        return new ModelAndView("login");
     }
 	@RequestMapping(path="/logout")
 	public ModelAndView logout(HttpSession session){
 		session.invalidate();
-        ModelAndView mv = new ModelAndView("login");
-		return mv;
+        return new ModelAndView("login");
 	}
 
     @RequestMapping(path="/403")
-    public ModelAndView Error403(){
+    public ModelAndView Error403(HttpSession session){
         return new ModelAndView("403");
     }
 }
