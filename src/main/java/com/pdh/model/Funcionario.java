@@ -1,6 +1,8 @@
 package com.pdh.model;
 
 import java.util.ArrayList;
+
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -57,8 +59,8 @@ public class Funcionario {
 	
 	@Override
 	public String toString() {
-		return "Funcionario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", PO=" + PO + ", diasDeTrabalho="
-				+ diasDeTrabalho +", tipo="+ tipo +", senha="+ senha+"]";
+		return "Funcionario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", PO=" + PO + 
+				", tipo="+ tipo +", senha="+ senha+"]";
 	}
 
 	public Funcionario(String nome, String cpf, String PO, String tipo, String senha, String userName) {

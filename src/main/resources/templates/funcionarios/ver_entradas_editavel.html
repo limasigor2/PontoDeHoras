@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<header th:replace="template :: header">
+	</header>
+	<body>
+		<head th:replace="template :: navbar-ver-todos"/>
+		<div class="container">
+			<div>
+				<img th:src="@{/img/logo.png}" alt="Logo da MS Serviços" style="float:right"/>
+				<p th:text="'Nome: ' + ${funcionario.nome}"> </p>
+				<p th:text="'CPF: ' + ${funcionario.cpf}"></p>
+				<p th:text="'PO: ' + ${funcionario.PO}"></p>
+				<p th:text="'Total de horas trabalhadas por mês: ' + ${total}"></p>
+ 
+			
+			</div>
+			<table class="table bordered striped responsive-table">
+				<thead>
+					<tr>
+						<th>Data</th>
+						<th>Entrada</th>
+						<th>Saída <br/> Almoço</th>
+						<th>Entrada <br/>Almoço</th>
+						<th>Saida</th>
+						<th>Horas/dia</th>
+						<th>Apagar horas</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="diaDeTrabalho : ${lista}">
+						<td th:text="${#temporals.format(diaDeTrabalho.date, 'dd/MM/yyyy')}"></td>
+						<td th:text="${diaDeTrabalho.entrada}"></td>
+						<td th:text="${diaDeTrabalho.saidaAlmoco}"></td>
+						<td th:text="${diaDeTrabalho.entradaAlmoco}"></td>
+						<td th:text="${diaDeTrabalho.saida}"></td>
+						<td th:text="${diaDeTrabalho.getTempoTrabalhado()}"></td>
+						<td>
+						<a class="waves-effect waves-light btn red" th:href="@{/diaDeTrabalho/delete/{id}(id=${diaDeTrabalho.id})}">
+								Excluir<i class="material-icons right">delete</i>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div th:replace="template :: javascript"></div>
+		</div>
+	</body>
+</html>

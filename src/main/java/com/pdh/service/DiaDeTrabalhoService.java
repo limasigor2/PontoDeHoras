@@ -16,7 +16,13 @@ public class DiaDeTrabalhoService {
 	@Autowired
 	private DiaDeTrabalhoDao repository;
 	
-	
+	public DiaDeTrabalho findOne(int id) {
+		return repository.findOne(id);
+	}
+	public void delete(int id) {
+		System.out.println(id);
+		repository.delete(id);
+	}
 	public void save(DiaDeTrabalho diaDeTrabalho) {
 		repository.save(diaDeTrabalho);
 	}
@@ -35,9 +41,13 @@ public class DiaDeTrabalhoService {
 		int totalHoras = 0;
 		int totalMinutos = 0;
 		for(DiaDeTrabalho diaDeTrabalho : funcionario.getDiasDeTrabalho()) {
-			String[] tempoDeTrabalho = diaDeTrabalho.getTempoTrabalhado().split(":");
-			totalHoras += Integer.parseInt(tempoDeTrabalho[0]);
-			totalMinutos += Integer.parseInt(tempoDeTrabalho[1]);
+			if(diaDeTrabalho.date.getYear() == ano) {
+				if(diaDeTrabalho.date.getMonthValue() == mes) {
+					String[] tempoDeTrabalho = diaDeTrabalho.getTempoTrabalhado().split(":");
+					totalHoras += Integer.parseInt(tempoDeTrabalho[0]);
+					totalMinutos += Integer.parseInt(tempoDeTrabalho[1]);
+				}
+			}
 		}
 		totalHoras += (int) (totalMinutos/60);
 		totalMinutos = totalMinutos % 60;

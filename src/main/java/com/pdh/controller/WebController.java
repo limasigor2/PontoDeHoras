@@ -6,8 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
-
 @Controller
 public class WebController {
 
@@ -18,7 +16,9 @@ public class WebController {
 
     @RequestMapping(path="/login")
     public ModelAndView login(){
-        return new ModelAndView("login");
+        ModelAndView mv = new ModelAndView("login");
+        
+    	return mv;
     }
 	@RequestMapping(path="/logout")
 	public ModelAndView logout(HttpSession session){

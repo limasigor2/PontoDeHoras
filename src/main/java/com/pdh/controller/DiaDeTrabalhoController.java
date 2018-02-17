@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,6 +27,7 @@ public class DiaDeTrabalhoController {
 	
 	@Autowired
 	private FuncionarioController funcionarioController;
+	
 	
 	@GetMapping("/diaDeTrabalho/add")
 	public ModelAndView addDiaDeTrabalho(DiaDeTrabalho diaDeTrabalho) {
@@ -53,4 +55,36 @@ public class DiaDeTrabalhoController {
 		
 		return mv;
 	}
+	@PostMapping("/diaDeTrabalho/saveAndReturn")
+	public ModelAndView saveAndRedirectToFuncionarioPage(@Valid DiaDeTrabalho diaDeTrabalho, BindingResult result, HttpSession session) {
+		ModelAndView mv = new ModelAndView("funcionarios/home_funcionario");
+		if(result.hasErrors()) {
+			mv.addObject("msg", "Não foi possível adicionar o dia de trabalhao ao funcionário selecionado");
+			funcionarioController.findAll(new DiaDeTrabalho(), session);
+		}
+		Funcionario func = diaDeTrabalho.getFuncionario();
+		diaDeTrabalhoService.save(diaDeTrabalho);
+		funcionarioService.save(func);
+		mv.addObject("funcionario", diaDeTrabalho.getFuncionario());
+		mv.addObject("funcionarios", funcionarioService.findAll());
+		mv.addObject("diaDeTrabalho", diaDeTrabalho);
+		mv.addObject("msg", "Horas adicionada ao funcionário com sucesso");
+		
+		return mv;
+	}
+	@GetMapping(path="/diaDeTrabalho/delete/{id}")
+	public ModelAndView delete(@PathVariable("id") int id) {
+		Funcionario func = funcionarioService.findOne(diaDeTrabalhoService.findOne(id).getFuncionario().getId());
+		int mes = diaDeTrabalhoService.findOne(id).date.getMonthValue();
+		int ano = diaDeTrabalhoService.findOne(id).date.getYear();
+		diaDeTrabalhoService.delete(id);
+		
+		ModelAndView mv = new ModelAndView("/funcionarios/ver_entradas_editavel");
+		mv.addObject("funcionario", func);
+		mv.addObject("lista", diaDeTrabalhoService.getAllByMonthByYearByFuncionario(func, mes, ano));
+		mv.addObject("total", diaDeTrabalhoService.getAllTempoDeServicoByMonthByYearByFuncionario(func, mes, ano));
+		
+		return mv;
+	}
+
 }

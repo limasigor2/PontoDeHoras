@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head th:replace="template :: header">
+	
+	</head>
+	<body>
+		<head th:replace="template :: navbar"/>
+		<div class="perfil container">
+			<h5 th:text="'Nome: ' + ${funcionario.nome}"></h5>
+			<h5 th:text="'CPF: ' + ${funcionario.cpf}"></h5>
+			<h5 th:text="'PO: ' + ${funcionario.PO}"></h5>
+			<h5 th:text="'Nome de Usuário: ' + ${funcionario.userName}"></h5>
+			<a class="waves-effect waves-light btn modal-trigger" th:href="'#modal' + ${funcionario.id}" >
+				Adicionar dia de Trabalho<i class="material-icons right">add</i>
+			</a>
+			<a class="waves-effect waves-light btn modal-trigger" th:href="'#modal-ver-entradas' + ${funcionario.id}" >
+				Ver Entradas
+			</a>
+			<div th:id="'modal' + ${funcionario.id}" class="modal modal-fixed-footer">
+				<div class="modal-content">
+					<h4 th:text="'Adiconar dia de servico ao ' + ${funcionario.nome}"></h4>	
+  					<form action="" th:action="@{/diaDeTrabalho/saveAndReturn}" th:object="${diaDeTrabalho}" method="POST" class="form-horizontal">
+						<input required="true" type="hidden" th:object="${funcionario}" th:value="${funcionario.id}" id="funcionario" name="funcionario"/>
+						<label for="date">Data</label>
+						<input required="true" type="date" class="datepicker" id="date" placeholder="Date" th:field="*{date}"/>
+						<label for="entrada">Hora que você saiu entrou:</label>
+						<input required="true" type="time" class="timepicker" id="entrada" placeholder="Time" th:field="*{entrada}"/>
+						<label for="saidaAlmoco">Hora que você saiu para o almoco:</label>
+						<input required="true" type="time" class="timepicker" id="saidaAlmoco" placeholder="Time" th:field="*{saidaAlmoco}"/>
+						<label for="entradaAlmoco">Hora que você voltou do almoço:</label>
+						<input required="true" type="time" class="timepicker" id="entradaAlmoco" placeholder="Time" th:field="*{entradaAlmoco}"/>
+						<label for="saida">Hora que você saiu:</label>
+						<input required="true" type="time" class="timepicker" id="saida" placeholder="Time" th:field="*{saida}"/>
+					 	<button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+					</form>						
+  				</div>
+				<div class="modal-footer">
+					<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
+				</div>
+			</div>
+			<div>
+
+				<div th:id="'modal-ver-entradas' + ${funcionario.id}" class="modal modal-fixed-footer">
+					<div class="modal-content">
+						<h4 th:text="'Ver as horas trabalhadas de ' + ${funcionario.nome}"></h4>	
+						<form th:action="@{/funcionarios/VerEntradasEditavel}">
+							<select name="mes">
+								<option value="1">Janeiro</option>
+								<option value="2">Fevereiro</option>
+								<option value="3">Março</option>
+								<option value="4">Abril</option>
+								<option value="5">Maio</option>
+								<option value="6">Junho</option>
+								<option value="7">Julho</option>
+								<option value="8">Agosto</option>
+								<option value="9">Setembro</option>
+								<option value="10">Outubro</option>
+								<option value="11">Novembro</option>
+								<option value="12">Dezembro</option>
+							</select>
+							<input type="number" name="ano" placeholder="ano"/>
+							<input type="hidden" name="id" th:value="${funcionario.id}"/>
+							<input type="submit" class="waves-effect waves-light btn"/>
+						</form>
+  					</div>
+				<div class="modal-footer">
+					<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div th:replace="template :: javascript"></div>
+		<script type="text/javascript" th:src="@{/js/modal.js}"></script>
+		<script type="text/javascript" th:src="@{/js/listar_func.js}"></script>
+
+		
+	</body>
+</html>

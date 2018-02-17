@@ -22,7 +22,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity(name="dia_de_trabalho")
 public class DiaDeTrabalho {
 
-	@Column(name="id_dia_de_trabalho")
+	@Column(name="id")
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer id;
