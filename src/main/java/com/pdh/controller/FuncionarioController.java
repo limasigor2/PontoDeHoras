@@ -81,10 +81,8 @@ public class FuncionarioController {
 	
 	@GetMapping(path="/funcionarios/add")
 	public ModelAndView add(Funcionario funcionario, HttpSession session) {
-		System.out.println(funcionario);
-		System.out.println(funcionario.getTipo());
-		System.out.println(validadorDePermissao.equals(null));
-		if(validadorDePermissao.temPermissao(funcionario, "/funcionarios/VerEntradasEditavel") == false) {
+		Funcionario usuario = (Funcionario) session.getAttribute("usuario");
+		if(validadorDePermissao.temPermissao(usuario, "/funcionarios/VerEntradasEditavel") == false) {
 			System.out.println("Entrei no if");
 			session.invalidate();
 			ModelAndView mv = new ModelAndView("/login");

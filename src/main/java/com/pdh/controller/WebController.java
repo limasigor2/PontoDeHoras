@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class WebController {
 
+	
 	@RequestMapping(path={"/","home"})
     public ModelAndView home(){
 		return new ModelAndView("login");
@@ -16,7 +17,8 @@ public class WebController {
 
     @RequestMapping(path="/login")
     public ModelAndView login(){
-        ModelAndView mv = new ModelAndView("login");
+
+    	ModelAndView mv = new ModelAndView("login");
         
     	return mv;
     }

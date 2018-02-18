@@ -13,9 +13,7 @@ public class ValidadorDePermissao{
 			return false;
 		if(pagina == null || pagina.equals(null))
 			return false;
-		System.out.println("passei antes do adm");
-		if(func.getTipo().equals(TipoDeUsuario.administrador)) {
-			System.out.println("passei no adm");
+		if(func.getTipo().equals(TipoDeUsuario.administrador)){
 			return true;
 		}
 		if(func.getTipo().equals(TipoDeUsuario.funcionario)) {
