@@ -40,12 +40,11 @@ public class FuncionarioController {
 
 		if(!validadorDePermissao.temPermissao((Funcionario) session.getAttribute("usuario"), "/funcionarios/VerEntradasEditavel")) {
 			session.invalidate();
-			ModelAndView mv = new ModelAndView("/login");
+			ModelAndView mv = new ModelAndView("login");
 			mv.addObject("msg", "Sem permissao para adicionar um usuário no sistema");
 			return mv;
 		}
 		ModelAndView mv = new ModelAndView("funcionarios/listar");
-		//mv.addObject("msg","");
 		mv.addObject("funcionarios", funcionarioService.findAll());
 		mv.addObject("diaDeTrabalho", diaDeTrabalho);
 		mv.addObject("TipoDeUsuario",Arrays.asList(TipoDeUsuario.values()));
@@ -67,7 +66,7 @@ public class FuncionarioController {
 		Funcionario funcionario = funcionarioService.findOne(id);
 		if(!validadorDePermissao.temPermissao((Funcionario) session.getAttribute("usuario"), "/funcionarios/VerEntradasEditavel")) {
 			session.invalidate();
-			ModelAndView mv = new ModelAndView("/login");
+			ModelAndView mv = new ModelAndView("login");
 			mv.addObject("msg", "Sem permissao para acessar essa página");
 			return mv;
 		}
@@ -81,13 +80,13 @@ public class FuncionarioController {
 	@GetMapping(path="/funcionarios/add")
 	public ModelAndView add(Funcionario funcionario, HttpSession session) {
 		Funcionario usuario = (Funcionario) session.getAttribute("usuario");
-		if(validadorDePermissao.temPermissao(usuario, "/funcionarios/VerEntradasEditavel") == false) {
+		if(validadorDePermissao.temPermissao(usuario, "funcionarios/VerEntradasEditavel") == false) {
 			session.invalidate();
-			ModelAndView mv = new ModelAndView("/login");
+			ModelAndView mv = new ModelAndView("login");
 			mv.addObject("msg", "Sem permissao para adicionar um usuário no sistema");
 			return mv;
 		}
-		ModelAndView mv = new ModelAndView("/funcionarios/add");
+		ModelAndView mv = new ModelAndView("funcionarios/add");
 		mv.addObject("funcionario", funcionario);
 		mv.addObject("TipoDeUsuario",Arrays.asList(TipoDeUsuario.values()));
 		return mv;
@@ -133,12 +132,10 @@ public class FuncionarioController {
 		}
 		if(funcionario.getCpf() == null) {
 			redirectAttrs.addFlashAttribute("msg", "Não foi possível salvar o funcionário, pois o CPF estava vazio");
-			//return findAll(new DiaDeTrabalho(), session);
 			return "redirect:/funcionarios";
 		}
 		if(funcionario.getPO() == null) {
 			redirectAttrs.addFlashAttribute("msg", "Não foi possível salvar o funcionário, pois o PO estava vazio");
-			//return findAll(new DiaDeTrabalho(), session);
 			return "redirect:/funcionarios";
 		}
 		if(funcionario.getTipo() == null) {

@@ -35,7 +35,6 @@ public class DiaDeTrabalhoController {
 		ModelAndView mv = new ModelAndView("funcionarios/listar");
 		mv.addObject("diaDeTrabalho", diaDeTrabalho);
 		mv.addObject("funcionarios", funcionarioService.findAll());
-		//return mv;
 		redirectAttrs.addFlashAttribute("diaDeTrabalho", diaDeTrabalho);
 		redirectAttrs.addFlashAttribute("funcionarios", funcionarioService.findAll());
 		return "redirect:/funcionarios";
@@ -57,7 +56,6 @@ public class DiaDeTrabalhoController {
 		mv.addObject("diaDeTrabalho", diaDeTrabalho);
 		mv.addObject("msg", "Horas adicionada ao funcionário com sucesso");
 		
-		//redirectAttrs.addFlashAttribute(arg0)
 		return "redirect:/funcionarios";
 	}
 	@PostMapping("/diaDeTrabalho/saveAndReturn")
