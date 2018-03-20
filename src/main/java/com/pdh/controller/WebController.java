@@ -10,22 +10,15 @@ import org.springframework.web.servlet.ModelAndView;
 public class WebController {
 
 	
-	@RequestMapping(path={"/","home"})
-    public ModelAndView home(){
-		return new ModelAndView("login");
+	@RequestMapping(path={"/","home", "login"})
+    public String home(){
+		return "login";
 	}
 
-    @RequestMapping(path="/login")
-    public ModelAndView login(){
-
-    	ModelAndView mv = new ModelAndView("login");
-        
-    	return mv;
-    }
 	@RequestMapping(path="/logout")
-	public ModelAndView logout(HttpSession session){
+	public String logout(HttpSession session){
 		session.invalidate();
-        return new ModelAndView("login");
+        return "redirect:/login";
 	}
 
     @RequestMapping(path="/403")

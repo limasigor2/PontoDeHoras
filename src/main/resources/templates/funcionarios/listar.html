@@ -8,7 +8,7 @@
 			<div>
 				<h3 class="header center-on-small-only">Funcionarios</h3>
 			</div>
-			<div th:if="${msg} != ''" class="chip" th:text="${msg}">
+			<div th:if="${msg != null}" class="chip" th:text="${msg}">
 				<i class="close material-icons">close</i>
 			</div>
 			<table class="table bordered striped responsive-table">

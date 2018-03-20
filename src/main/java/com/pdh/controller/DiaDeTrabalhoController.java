@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.pdh.model.Funcionario;
 import com.pdh.model.DiaDeTrabalho;
@@ -30,15 +31,18 @@ public class DiaDeTrabalhoController {
 	
 	
 	@GetMapping("/diaDeTrabalho/add")
-	public ModelAndView addDiaDeTrabalho(DiaDeTrabalho diaDeTrabalho) {
+	public String addDiaDeTrabalho(DiaDeTrabalho diaDeTrabalho, RedirectAttributes redirectAttrs) {
 		ModelAndView mv = new ModelAndView("funcionarios/listar");
 		mv.addObject("diaDeTrabalho", diaDeTrabalho);
 		mv.addObject("funcionarios", funcionarioService.findAll());
-		return mv;
+		//return mv;
+		redirectAttrs.addFlashAttribute("diaDeTrabalho", diaDeTrabalho);
+		redirectAttrs.addFlashAttribute("funcionarios", funcionarioService.findAll());
+		return "redirect:/funcionarios";
 	}
 	
 	@PostMapping("/diaDeTrabalho/save")
-	public ModelAndView save(@Valid DiaDeTrabalho diaDeTrabalho, BindingResult result, HttpSession session) {
+	public String save(@Valid DiaDeTrabalho diaDeTrabalho, BindingResult result, HttpSession session, RedirectAttributes redirectAttrs) {
 		ModelAndView mv = new ModelAndView("funcionarios/listar");
 
 		if(result.hasErrors()) {
@@ -53,7 +57,8 @@ public class DiaDeTrabalhoController {
 		mv.addObject("diaDeTrabalho", diaDeTrabalho);
 		mv.addObject("msg", "Horas adicionada ao funcionário com sucesso");
 		
-		return mv;
+		//redirectAttrs.addFlashAttribute(arg0)
+		return "redirect:/funcionarios";
 	}
 	@PostMapping("/diaDeTrabalho/saveAndReturn")
 	public ModelAndView saveAndRedirectToFuncionarioPage(@Valid DiaDeTrabalho diaDeTrabalho, BindingResult result, HttpSession session) {
