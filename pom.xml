@@ -64,12 +64,14 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId> <!-- VERIFICADO -->
+			<version>1.5.3.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 		    <groupId>org.thymeleaf.extras</groupId>
 		    <artifactId>thymeleaf-extras-java8time</artifactId>
 		</dependency>
+
 	</dependencies>
 	<profiles>
 		<profile>

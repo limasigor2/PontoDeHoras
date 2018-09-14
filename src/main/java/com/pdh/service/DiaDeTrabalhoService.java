@@ -8,23 +8,23 @@ import org.springframework.stereotype.Service;
 
 import com.pdh.model.Funcionario;
 import com.pdh.model.DiaDeTrabalho;
-import com.pdh.repository.DiaDeTrabalhoDao;
+import com.pdh.repository.DiaDeTrabalhoRepository;
 
 @Service
 public class DiaDeTrabalhoService {
 
 	@Autowired
-	private DiaDeTrabalhoDao repository;
+	private DiaDeTrabalhoRepository diadDeTrabalhoRepository;
 	
 	public DiaDeTrabalho findOne(int id) {
-		return repository.findOne(id);
+		return diadDeTrabalhoRepository.findOne(id);
 	}
 	public void delete(int id) {
 		System.out.println(id);
-		repository.delete(id);
+		diadDeTrabalhoRepository.delete(id);
 	}
 	public void save(DiaDeTrabalho diaDeTrabalho) {
-		repository.save(diaDeTrabalho);
+		diadDeTrabalhoRepository.save(diaDeTrabalho);
 	}
 	public List<DiaDeTrabalho> getAllByMonthByYearByFuncionario(Funcionario funcionario, int mes, int ano){
 		List<DiaDeTrabalho> listaHoras = new ArrayList<>();

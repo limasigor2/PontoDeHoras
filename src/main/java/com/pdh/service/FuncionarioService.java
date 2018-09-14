@@ -6,32 +6,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pdh.model.Funcionario;
-import com.pdh.repository.FuncionarioDao;
+import com.pdh.repository.FuncionarioRepository;
 
 @Service
 public class FuncionarioService{
 	
 	@Autowired
-	private FuncionarioDao repository;
+	private FuncionarioRepository funcionarioRepository;
 	
 	public List<Funcionario> findAll(){
-		return (List<Funcionario>) repository.findAll();
+		return (List<Funcionario>) funcionarioRepository.findAll();
 	}
 	
 	public Funcionario findOne(Integer id) {
-		return repository.findOne(id);
+		return funcionarioRepository.findOne(id);
 	}
 	public void save(Funcionario funcionario) {
-		repository.save(funcionario);
+		funcionarioRepository.save(funcionario);
 	}
 	public void delete(Integer id) {
-		repository.delete(id);
+		funcionarioRepository.delete(id);
 	}
 	public void delete(Funcionario funcionario) {
-		repository.delete(funcionario);
+		funcionarioRepository.delete(funcionario);
 	}
 	public Funcionario findByUserName(String userName){
-		return repository.findByUserName(userName);
+		return funcionarioRepository.findByUserName(userName);
 	}
 
 }

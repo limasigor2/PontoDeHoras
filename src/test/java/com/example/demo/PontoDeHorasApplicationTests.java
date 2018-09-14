@@ -7,13 +7,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.pdh.PontoDeHorasApplication;
 
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = PontoDeHorasApplication.class)
 public class PontoDeHorasApplicationTests {
 
 	@Test
-	public void contextLoads() {
+	public void contextLoads() {}
 
-	}
 
 }
