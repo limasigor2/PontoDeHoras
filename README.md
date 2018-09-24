@@ -2,7 +2,6 @@
 
 Sistema desenvolvido para substituir o uso de excel em uma empresa para registrar as horas trabalhadas de seus funcionários.
 
-Obs: Este trabalho será usado para a disciplina de manutenção
 ## Para rodar a aplicação 
 - mudar o nome do arquivo aplication.properties para application.properties e renomear os seguintes campos para os da sua máquina.
 
