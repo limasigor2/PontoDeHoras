@@ -49,12 +49,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId> <!-- VERIFICADO -->
+			<artifactId>postgresql</artifactId>
+			<version>9.4.1212.jre7</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId> <!-- VERIFICADO -->
+			<artifactId>spring-boot-starter-data-jpa</artifactId> 
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -64,12 +65,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId> <!-- VERIFICADO -->
-			<version>1.5.3.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 		    <groupId>org.thymeleaf.extras</groupId>
 		    <artifactId>thymeleaf-extras-java8time</artifactId>
+			<version>2.1.0.RELEASE</version>
 		</dependency>
 
 	</dependencies>
@@ -84,7 +85,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+			<!-- plugin>
 			    <groupId>org.apache.tomcat.maven</groupId>
 			    <artifactId>tomcat7-maven-plugin</artifactId>
 			    <version>2.2</version>
@@ -93,7 +94,7 @@
 			        <server>TomcatServer</server>
 			        <path>/PontoDeHoras</path>
 			    </configuration>
-			</plugin>
+			</plugin-->
 		</plugins>
 	</build>
 
