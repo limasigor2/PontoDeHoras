@@ -26,7 +26,7 @@ under the License.
         My own ruleset.
     </description>
 
-    <rule ref="category/java/bestpractices.xml/AvoidUsingHardCodedIP" />
+	<rule ref="category/java/bestpractices.xml/AvoidUsingHardCodedIP" />
     <rule ref="category/java/bestpractices.xml/CheckResultSet" />
     <rule ref="category/java/bestpractices.xml/UnusedImports" />
     <rule ref="category/java/bestpractices.xml/UnusedFormalParameter" />
