@@ -29,8 +29,8 @@ public class DiaDeTrabalhoService {
 	public List<DiaDeTrabalho> getAllByMonthByYearByFuncionario(Funcionario funcionario, int mes, int ano){
 		List<DiaDeTrabalho> listaHoras = new ArrayList<>();
 		for(DiaDeTrabalho diaDeTrabalho : funcionario.getDiasDeTrabalho()) {
-			if(diaDeTrabalho.getDate().getYear() == ano 
-					&& diaDeTrabalho.getDate().getMonthValue() == mes) {
+			if(diaDeTrabalho.getDate().getYear() == ano )
+				if( diaDeTrabalho.getDate().getMonthValue() == mes) {
 					listaHoras.add(diaDeTrabalho);
 			}
 		}
@@ -40,13 +40,12 @@ public class DiaDeTrabalhoService {
 		int totalHoras = 0;
 		int totalMinutos = 0;
 		for(DiaDeTrabalho diaDeTrabalho : funcionario.getDiasDeTrabalho()) {
-			if(diaDeTrabalho.date.getYear() == ano) {
-				if(diaDeTrabalho.date.getMonthValue() == mes) {
+			if(diaDeTrabalho.date.getYear() == ano && diaDeTrabalho.date.getMonthValue() == mes) {
 					String[] tempoDeTrabalho = diaDeTrabalho.getTempoTrabalhado().split(":");
 					totalHoras += Integer.parseInt(tempoDeTrabalho[0]);
 					totalMinutos += Integer.parseInt(tempoDeTrabalho[1]);
 				}
-			}
+
 		}
 		totalHoras += (int) (totalMinutos/60);
 		totalMinutos = totalMinutos % 60;
