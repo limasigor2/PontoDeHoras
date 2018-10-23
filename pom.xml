@@ -113,9 +113,9 @@
         <configuration>
             <failOnViolation>true</failOnViolation> <!-- this is actually true by default, but can be disabled -->
             <printFailingErrors>true</printFailingErrors>
-          <!--rulesets> 
+          <rulesets> 
           	<ruleset>my-pmd-ruleset.xml</ruleset>
-          </rulesets-->
+          </rulesets>
         </configuration>
         <executions>
           <execution>
