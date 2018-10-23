@@ -29,10 +29,9 @@ public class DiaDeTrabalhoService {
 	public List<DiaDeTrabalho> getAllByMonthByYearByFuncionario(Funcionario funcionario, int mes, int ano){
 		List<DiaDeTrabalho> listaHoras = new ArrayList<>();
 		for(DiaDeTrabalho diaDeTrabalho : funcionario.getDiasDeTrabalho()) {
-			if(diaDeTrabalho.getDate().getYear() == ano) {
-				if(diaDeTrabalho.getDate().getMonthValue() == mes) {
+			if(diaDeTrabalho.getDate().getYear() == ano 
+					&& diaDeTrabalho.getDate().getMonthValue() == mes) {
 					listaHoras.add(diaDeTrabalho);
-				}
 			}
 		}
 		return listaHoras;
