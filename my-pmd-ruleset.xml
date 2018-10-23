@@ -23,13 +23,7 @@ under the License.
     xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
 
     <description>
-        The default ruleset used by the Maven PMD Plugin, when no other ruleset is specified.
-        It contains the rules of the old (pre PMD 6.0.0) rulesets java-basic, java-empty, java-imports,
-        java-unnecessary, java-unusedcode.
-
-        This ruleset might be used as a starting point for an own customized ruleset [0].
-
-        [0] https://pmd.github.io/latest/pmd_userdocs_understanding_rulesets.html
+        My own ruleset.
     </description>
 
     <rule ref="category/java/bestpractices.xml/AvoidUsingHardCodedIP" />
@@ -83,9 +77,9 @@ under the License.
     <rule ref="category/java/errorprone.xml/UnusedNullCheckInEquals" />
     <rule ref="category/java/errorprone.xml/UselessOperationOnImmutable" />
 
-    <!-- rule ref="category/java/multithreading.xml/AvoidThreadGroup" />
-    <rule ref="category/java/multithreading.xml/DontCallThreadRun" /> EU NÃO TRABALHO COM THREAD MESMO
-    <rule ref="category/java/multithreading.xml/DoubleCheckedLocking" /-->
+    <rule ref="category/java/multithreading.xml/AvoidThreadGroup" />
+    <rule ref="category/java/multithreading.xml/DontCallThreadRun" />
+    <rule ref="category/java/multithreading.xml/DoubleCheckedLocking">
 
     <rule ref="category/java/performance.xml/BigIntegerInstantiation" />
     <rule ref="category/java/performance.xml/BooleanInstantiation" />
