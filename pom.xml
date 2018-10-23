@@ -111,11 +111,11 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
         <configuration>
-            <failOnViolation>false</failOnViolation> <!-- this is actually true by default, but can be disabled -->
+            <failOnViolation>true</failOnViolation> <!-- this is actually true by default, but can be disabled -->
             <printFailingErrors>true</printFailingErrors>
-          <rulesets> 
-          	<ruleset>/my-pmd-ruleset.xml</ruleset>
-          </rulesets>
+          <!--rulesets> 
+          	<ruleset>my-pmd-ruleset.xml</ruleset>
+          </rulesets-->
         </configuration>
         <executions>
           <execution>
