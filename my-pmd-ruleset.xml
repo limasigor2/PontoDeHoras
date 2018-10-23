@@ -83,9 +83,9 @@ under the License.
     <rule ref="category/java/errorprone.xml/UnusedNullCheckInEquals" />
     <rule ref="category/java/errorprone.xml/UselessOperationOnImmutable" />
 
-    <rule ref="category/java/multithreading.xml/AvoidThreadGroup" />
+    <!-- rule ref="category/java/multithreading.xml/AvoidThreadGroup" />
     <rule ref="category/java/multithreading.xml/DontCallThreadRun" />
-    <rule ref="category/java/multithreading.xml/DoubleCheckedLocking" />
+    <rule ref="category/java/multithreading.xml/DoubleCheckedLocking" /-->
 
     <rule ref="category/java/performance.xml/BigIntegerInstantiation" />
     <rule ref="category/java/performance.xml/BooleanInstantiation" />
