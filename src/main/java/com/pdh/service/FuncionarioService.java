@@ -17,7 +17,6 @@ public class FuncionarioService{
 	public List<Funcionario> findAll(){
 		return (List<Funcionario>) funcionarioRepository.findAll();
 	}
-	
 	public Funcionario findOne(Integer id) {
 		return funcionarioRepository.findOne(id);
 	}

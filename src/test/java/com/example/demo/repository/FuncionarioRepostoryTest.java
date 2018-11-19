@@ -24,7 +24,6 @@ import com.pdh.repository.FuncionarioRepository;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace=Replace.NONE)
 @SpringBootTest(classes = PontoDeHorasApplication.class)
-
 public class FuncionarioRepostoryTest {
 
 	@Autowired
