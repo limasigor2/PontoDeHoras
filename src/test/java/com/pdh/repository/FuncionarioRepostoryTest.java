@@ -1,4 +1,4 @@
-package com.example.demo.repository;
+package com.pdh.repository;
 
 
 import org.junit.Assert;
@@ -52,7 +52,14 @@ public class FuncionarioRepostoryTest {
 		Funcionario retornado = funcionarioRepository.findByUserName("UserName");
 
 		Assert.assertNull(retornado);
+	}
+	@Test
+	public void save() {
+		Funcionario igor = new Funcionario("Igor Lima", "123.456.789.59", "123.456.789.58", "administrador", "senha", "username");
 
+		entityManager.persist(igor);
+		entityManager.flush();
 
 	}
+	
 }

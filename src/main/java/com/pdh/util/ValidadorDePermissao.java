@@ -17,11 +17,11 @@ public class ValidadorDePermissao{
 			return true;
 		}
 		if(func.getTipo().equals(TipoDeUsuario.funcionario)) {
-			return funcionarioTemPermissao(func, pagina);
+			return funcionarioTemPermissao(pagina);
 		}
 		return false;
 	}
-	private boolean funcionarioTemPermissao(Funcionario func, String pagina) {
+	private boolean funcionarioTemPermissao(String pagina) {
 		if(pagina.contains("VerEntradasEditavel"))
 			return true;
 		if(pagina.contains("funcionarios/edit"))
