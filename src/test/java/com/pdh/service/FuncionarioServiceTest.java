@@ -16,10 +16,6 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -33,9 +29,6 @@ import com.pdh.service.FuncionarioService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = PontoDeHorasApplication.class)
-@AutoConfigureTestDatabase(replace=Replace.NONE)
-@DataJpaTest
-//@AutoConfigureTestDatabase(replace=Replace.NONE)
 public class FuncionarioServiceTest{
 	
 	@Autowired
@@ -44,9 +37,6 @@ public class FuncionarioServiceTest{
 	
 	@MockBean
 	private FuncionarioRepository funcionarioRepository;
-	 
-	@Autowired
-	private TestEntityManager entityManager;
 	
 	private ArrayList<Funcionario> funcionarios;
 	
@@ -181,13 +171,6 @@ public class FuncionarioServiceTest{
 		verify(funcionarioRepository, times(1)).save(diego);
 		assertEquals(4, funcionarioService.findAll().size());
 	}
-	@Test
-	public void save() {
-		entityManager.persist(funcionarios.get(0));
-		entityManager.flush();
-		entityManager.persist(funcionarios.get(0));
-		entityManager.flush();
-		System.out.println(funcionarioRepository.findAll().size());
-	}
+
 	
 }
