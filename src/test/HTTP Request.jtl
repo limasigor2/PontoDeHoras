@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="26" it="0" lt="3" ct="1" ts="1544226494839" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-7" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="3" it="0" lt="3" ct="1" ts="1544226494839" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-7" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="22" it="0" lt="14" ct="0" ts="1544226494843" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-7" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="435" it="0" lt="4" ct="0" ts="1544226494438" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-3" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="4" it="0" lt="4" ct="0" ts="1544226494438" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-3" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="431" it="0" lt="431" ct="0" ts="1544226494442" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-3" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="517" it="0" lt="53" ct="34" ts="1544226494356" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-1" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="53" it="0" lt="53" ct="34" ts="1544226494356" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-1" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="461" it="0" lt="448" ct="0" ts="1544226494412" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-1" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="334" it="0" lt="7" ct="1" ts="1544226494538" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-4" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="7" it="0" lt="7" ct="1" ts="1544226494538" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-4" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="326" it="0" lt="314" ct="0" ts="1544226494546" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-4" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="229" it="0" lt="2" ct="0" ts="1544226494638" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-5" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="2" it="0" lt="2" ct="0" ts="1544226494638" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-5" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="227" it="0" lt="218" ct="0" ts="1544226494640" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-5" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="508" it="0" lt="52" ct="34" ts="1544226494357" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-2" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="52" it="0" lt="52" ct="34" ts="1544226494357" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-2" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="453" it="0" lt="445" ct="0" ts="1544226494412" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-2" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="143" it="0" lt="2" ct="1" ts="1544226494738" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-6" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="2" it="0" lt="2" ct="1" ts="1544226494738" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-6" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="141" it="0" lt="121" ct="0" ts="1544226494740" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-6" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="17" it="0" lt="4" ct="2" ts="1544226494884" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-4" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="4" it="0" lt="4" ct="2" ts="1544226494884" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-4" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="13" it="0" lt="9" ct="0" ts="1544226494888" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-4" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="17" it="0" lt="4" ct="1" ts="1544226494884" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-6" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="4" it="0" lt="4" ct="1" ts="1544226494884" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-6" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="13" it="0" lt="13" ct="0" ts="1544226494888" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-6" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="19" it="0" lt="4" ct="1" ts="1544226494885" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-2" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="4" it="0" lt="4" ct="1" ts="1544226494885" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-2" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="15" it="0" lt="14" ct="0" ts="1544226494889" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-2" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="20" it="0" lt="3" ct="0" ts="1544226494887" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-5" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="3" it="0" lt="3" ct="0" ts="1544226494887" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-5" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="16" it="0" lt="12" ct="0" ts="1544226494891" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-5" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="14" it="0" lt="7" ct="1" ts="1544226494906" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-2" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="7" it="0" lt="7" ct="1" ts="1544226494906" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-2" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="7" it="0" lt="7" ct="0" ts="1544226494913" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-2" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="14" it="0" lt="7" ct="0" ts="1544226494909" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-5" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="7" it="0" lt="7" ct="0" ts="1544226494909" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-5" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="6" it="0" lt="6" ct="0" ts="1544226494917" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-5" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="21" it="0" lt="4" ct="0" ts="1544226494903" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-6" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="4" it="0" lt="4" ct="0" ts="1544226494903" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-6" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="16" it="0" lt="16" ct="0" ts="1544226494908" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-6" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="39" it="0" lt="2" ct="0" ts="1544226494887" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-3" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="2" it="0" lt="2" ct="0" ts="1544226494887" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-3" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="36" it="0" lt="33" ct="0" ts="1544226494890" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-3" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="41" it="0" lt="8" ct="1" ts="1544226494884" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-7" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="8" it="0" lt="8" ct="1" ts="1544226494884" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-7" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="33" it="0" lt="30" ct="0" ts="1544226494892" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-7" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="39" it="0" lt="3" ct="0" ts="1544226494885" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-1" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="3" it="0" lt="3" ct="0" ts="1544226494885" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-1" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="36" it="0" lt="36" ct="0" ts="1544226494888" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-1" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="12" it="0" lt="3" ct="1" ts="1544226494924" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-5" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="3" it="0" lt="3" ct="1" ts="1544226494924" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-5" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="9" it="0" lt="9" ct="0" ts="1544226494927" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-5" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="19" it="0" lt="4" ct="3" ts="1544226494922" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-2" dt="text" by="1533" sby="320" ng="8" na="8">
+  <httpSample t="4" it="0" lt="4" ct="3" ts="1544226494922" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-2" dt="" by="120" sby="182" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="15" it="0" lt="15" ct="0" ts="1544226494926" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-2" dt="text" by="1413" sby="138" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="14" it="0" lt="5" ct="1" ts="1544226494928" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-7" dt="text" by="1533" sby="320" ng="8" na="8">
+  <httpSample t="5" it="0" lt="5" ct="1" ts="1544226494928" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-7" dt="" by="120" sby="182" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="9" it="0" lt="9" ct="0" ts="1544226494933" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-7" dt="text" by="1413" sby="138" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="17" it="0" lt="10" ct="6" ts="1544226494927" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-6" dt="text" by="1533" sby="320" ng="8" na="8">
+  <httpSample t="10" it="0" lt="10" ct="6" ts="1544226494927" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-6" dt="" by="120" sby="182" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="6" it="0" lt="6" ct="0" ts="1544226494938" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-6" dt="text" by="1413" sby="138" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="47" it="0" lt="7" ct="1" ts="1544226494902" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-4" dt="text" by="1533" sby="320" ng="8" na="8">
+  <httpSample t="7" it="0" lt="7" ct="1" ts="1544226494902" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-4" dt="" by="120" sby="182" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="40" it="0" lt="40" ct="0" ts="1544226494909" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-4" dt="text" by="1413" sby="138" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="24" it="0" lt="12" ct="1" ts="1544226494940" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-8" dt="text" by="1533" sby="320" ng="8" na="8">
+  <httpSample t="12" it="0" lt="12" ct="1" ts="1544226494940" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-8" dt="" by="120" sby="182" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="11" it="0" lt="9" ct="0" ts="1544226494953" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-8" dt="text" by="1413" sby="138" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="43" it="0" lt="3" ct="0" ts="1544226494928" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-3" dt="text" by="1533" sby="320" ng="8" na="8">
+  <httpSample t="3" it="0" lt="3" ct="0" ts="1544226494928" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-3" dt="" by="120" sby="182" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="40" it="0" lt="33" ct="0" ts="1544226494931" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-3" dt="text" by="1413" sby="138" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="30" it="0" lt="9" ct="0" ts="1544226494944" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-7" dt="text" by="1533" sby="320" ng="8" na="8">
+  <httpSample t="9" it="0" lt="9" ct="0" ts="1544226494944" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-7" dt="" by="120" sby="182" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="21" it="0" lt="20" ct="0" ts="1544226494953" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-7" dt="text" by="1413" sby="138" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="29" it="0" lt="10" ct="1" ts="1544226494947" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-6" dt="text" by="1533" sby="320" ng="8" na="8">
+  <httpSample t="10" it="0" lt="10" ct="1" ts="1544226494947" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-6" dt="" by="120" sby="182" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="18" it="0" lt="18" ct="0" ts="1544226494958" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-6" dt="text" by="1413" sby="138" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="51" it="0" lt="32" ct="0" ts="1544226494929" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-1" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="32" it="0" lt="32" ct="0" ts="1544226494929" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-1" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="18" it="0" lt="17" ct="0" ts="1544226494962" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-1" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="11" it="0" lt="1" ct="0" ts="1544226494975" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-7" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="1" it="0" lt="1" ct="0" ts="1544226494975" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-7" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="9" it="0" lt="9" ct="0" ts="1544226494977" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-7" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="35" it="0" lt="3" ct="1" ts="1544226494942" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-2" dt="text" by="1533" sby="320" ng="8" na="8">
+  <httpSample t="3" it="0" lt="3" ct="1" ts="1544226494942" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-2" dt="" by="120" sby="182" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="31" it="0" lt="31" ct="0" ts="1544226494946" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-2" dt="text" by="1413" sby="138" ng="8" na="8">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="48" it="0" lt="5" ct="1" ts="1544226494939" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-5" dt="text" by="1533" sby="320" ng="6" na="6">
+  <httpSample t="5" it="0" lt="5" ct="1" ts="1544226494939" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-5" dt="" by="120" sby="182" ng="6" na="6">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="43" it="0" lt="43" ct="0" ts="1544226494944" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-5" dt="text" by="1413" sby="138" ng="6" na="6">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="20" it="0" lt="2" ct="1" ts="1544226494966" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-8" dt="text" by="1533" sby="320" ng="7" na="7">
+  <httpSample t="2" it="0" lt="2" ct="1" ts="1544226494966" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-8" dt="" by="120" sby="182" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="17" it="0" lt="17" ct="0" ts="1544226494969" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-8" dt="text" by="1413" sby="138" ng="7" na="7">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="13" it="0" lt="2" ct="0" ts="1544226494981" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-1" dt="text" by="1533" sby="320" ng="4" na="4">
+  <httpSample t="2" it="0" lt="2" ct="0" ts="1544226494981" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-1" dt="" by="120" sby="182" ng="4" na="4">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="10" it="0" lt="9" ct="0" ts="1544226494984" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-1" dt="text" by="1413" sby="138" ng="4" na="4">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="21" it="0" lt="10" ct="1" ts="1544226494973" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-3" dt="text" by="1533" sby="320" ng="4" na="4">
+  <httpSample t="10" it="0" lt="10" ct="1" ts="1544226494973" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-3" dt="" by="120" sby="182" ng="4" na="4">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="10" it="0" lt="10" ct="0" ts="1544226494984" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-3" dt="text" by="1413" sby="138" ng="4" na="4">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="43" it="0" lt="17" ct="1" ts="1544226494951" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-4" dt="text" by="1533" sby="320" ng="4" na="4">
+  <httpSample t="17" it="0" lt="17" ct="1" ts="1544226494951" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-4" dt="" by="120" sby="182" ng="4" na="4">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="25" it="0" lt="25" ct="0" ts="1544226494969" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-4" dt="text" by="1413" sby="138" ng="4" na="4">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="17" it="0" lt="4" ct="1" ts="1544226494990" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-8" dt="text" by="1533" sby="320" ng="4" na="4">
+  <httpSample t="4" it="0" lt="4" ct="1" ts="1544226494990" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-8" dt="" by="120" sby="182" ng="4" na="4">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="12" it="0" lt="7" ct="0" ts="1544226494995" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-8" dt="text" by="1413" sby="138" ng="4" na="4">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="14" it="0" lt="7" ct="1" ts="1544226494995" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-1" dt="text" by="1533" sby="320" ng="4" na="4">
+  <httpSample t="7" it="0" lt="7" ct="1" ts="1544226494995" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-1" dt="" by="120" sby="182" ng="4" na="4">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="7" it="0" lt="7" ct="0" ts="1544226495002" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-1" dt="text" by="1413" sby="138" ng="4" na="4">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="16" it="0" lt="7" ct="2" ts="1544226494996" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-3" dt="text" by="1533" sby="320" ng="3" na="3">
+  <httpSample t="7" it="0" lt="7" ct="2" ts="1544226494996" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-3" dt="" by="120" sby="182" ng="3" na="3">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="9" it="0" lt="8" ct="0" ts="1544226495003" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-3" dt="text" by="1413" sby="138" ng="3" na="3">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="21" it="0" lt="5" ct="1" ts="1544226494997" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-4" dt="text" by="1533" sby="320" ng="2" na="2">
+  <httpSample t="5" it="0" lt="5" ct="1" ts="1544226494997" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-4" dt="" by="120" sby="182" ng="2" na="2">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="16" it="0" lt="15" ct="0" ts="1544226495002" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-4" dt="text" by="1413" sby="138" ng="2" na="2">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="10" it="0" lt="3" ct="1" ts="1544226495008" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-8" dt="text" by="1533" sby="320" ng="2" na="2">
+  <httpSample t="3" it="0" lt="3" ct="1" ts="1544226495008" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-8" dt="" by="120" sby="182" ng="2" na="2">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="7" it="0" lt="6" ct="0" ts="1544226495011" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-8" dt="text" by="1413" sby="138" ng="2" na="2">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="8" it="0" lt="2" ct="1" ts="1544226495019" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-8" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="2" it="0" lt="2" ct="1" ts="1544226495019" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-8" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="6" it="0" lt="6" ct="0" ts="1544226495021" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-8" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="7" it="0" lt="2" ct="1" ts="1544226495042" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-9" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="2" it="0" lt="2" ct="1" ts="1544226495042" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-9" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="5" it="0" lt="5" ct="0" ts="1544226495044" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-9" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="8" it="0" lt="1" ct="1" ts="1544226495050" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-9" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="1" it="0" lt="1" ct="1" ts="1544226495050" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-9" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="6" it="0" lt="6" ct="0" ts="1544226495052" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-9" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="9" it="0" lt="2" ct="1" ts="1544226495060" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-9" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="2" it="0" lt="2" ct="1" ts="1544226495060" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-9" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="7" it="0" lt="7" ct="0" ts="1544226495062" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-9" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="6" it="0" lt="1" ct="0" ts="1544226495070" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-9" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="1" it="0" lt="1" ct="0" ts="1544226495070" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-9" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="5" it="0" lt="5" ct="0" ts="1544226495071" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-9" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="6" it="0" lt="1" ct="0" ts="1544226495077" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-9" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="1" it="0" lt="1" ct="0" ts="1544226495077" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-9" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="5" it="0" lt="5" ct="0" ts="1544226495078" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-9" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="12" it="0" lt="2" ct="0" ts="1544226495142" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-10" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="2" it="0" lt="2" ct="0" ts="1544226495142" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-10" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="10" it="0" lt="10" ct="0" ts="1544226495144" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-10" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="8" it="0" lt="2" ct="1" ts="1544226495155" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-10" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="2" it="0" lt="2" ct="1" ts="1544226495155" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-10" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="6" it="0" lt="6" ct="0" ts="1544226495157" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-10" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="8" it="0" lt="2" ct="1" ts="1544226495164" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-10" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="2" it="0" lt="2" ct="1" ts="1544226495164" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-10" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="6" it="0" lt="6" ct="0" ts="1544226495166" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-10" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="8" it="0" lt="3" ct="1" ts="1544226495174" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-10" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="3" it="0" lt="3" ct="1" ts="1544226495174" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-10" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="4" it="0" lt="4" ct="0" ts="1544226495178" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-10" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+<httpSample t="9" it="0" lt="2" ct="1" ts="1544226495183" s="true" lb="HTTP Request" rc="200" rm="" tn="Usuarios 1-10" dt="text" by="1533" sby="320" ng="1" na="1">
+  <httpSample t="2" it="0" lt="2" ct="1" ts="1544226495183" s="true" lb="HTTP Request-0" rc="302" rm="" tn="Usuarios 1-10" dt="" by="120" sby="182" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol</java.net.URL>
+  </httpSample>
+  <httpSample t="7" it="0" lt="6" ct="0" ts="1544226495185" s="true" lb="HTTP Request-1" rc="200" rm="" tn="Usuarios 1-10" dt="text" by="1413" sby="138" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/certificados-flisol/</java.net.URL>
+</httpSample>
+
+</testResults>

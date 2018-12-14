@@ -1,0 +1,21 @@
+app-db:  
+  build: ./db
+  ports:
+    - "5433:5432"
+  volumes_from:
+    - app-db-data
+
+
+
+app-web:  
+  build: ./web
+  ports:
+    - "8081:8080"
+  links:
+    - app-db
+
+app-db-data:  
+  image: cogniteev/echo
+  command: echo 'Data Container for PostgreSQL'
+  volumes:
+    - /var/lib/postgresql/data
